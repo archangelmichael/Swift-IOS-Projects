@@ -32,8 +32,9 @@ class ViewController: UIViewController {
         sort(&keys)
         for tipPercentage in keys {
             var tipValue = possibleTips[tipPercentage]!
-            var formattedTipValue = String(format: "%0.2f", tipValue)
-            results += "\(tipPercentage)%: \(formattedTipValue) \n"
+            var formattedTipValue = String(format: "%0.2f", tipValue.tipAmount)
+            var formattedTotalValue = String(format: "%0.2f", tipValue.total)
+            results += "\(tipPercentage)%: Tip(\(formattedTipValue)) Total(\(formattedTotalValue)) \n"
         }
         
         resultTextView.text = results
