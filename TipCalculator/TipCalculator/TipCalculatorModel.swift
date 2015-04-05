@@ -24,15 +24,15 @@ class TipCalculatorModel {
     
     
     
-    func calcTipWithTipPercentage(tipPercentage: Double) -> (tipAmount:Double, total: Double) {
+    func calcTipWithTipPercentage(tipPercentage: Double) -> (tipAmount:Double, totalAmount: Double) {
         let tipAmount = subtotal * tipPercentage
         let finalTotal = total + tipAmount
         return (tipAmount, finalTotal)
     }
     
-    func returnPossibleTips() -> [Int : (tipAmount:Double, total: Double)] {
+    func returnPossibleTips() -> [Int : (tipAmount:Double, totalAmount: Double)] {
         let possibleTips: [Double] = [0.15, 0.18, 0.2]
-        var returnValue = Dictionary<Int, (tipAmount:Double, total: Double)>()
+        var returnValue = Dictionary<Int, (tipAmount:Double, totalAmount: Double)>()
         for tip in possibleTips {
             let intPercentage = Int(tip * 100)
             returnValue[intPercentage] = calcTipWithTipPercentage(tip)

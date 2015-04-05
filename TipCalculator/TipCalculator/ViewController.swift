@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var totalInput: UITextField!
     @IBOutlet weak var taxPercentageLabel: UILabel!
     @IBOutlet weak var taxPercentageSlider: UISlider!
-    @IBOutlet weak var resultTextView: UITextView!
+    @IBOutlet weak var resultsTextView: UITableView!
     
     let tipCalculator = TipCalculatorModel(total: 33.5, taxPercentage: 0.06)
+    var possibleTips = Dictionary<Int, (tipAmount: Double, totalAmount: Double)>()
+    var sortedKeys: [Int] = []
     
     @IBAction func taxPercentageChanged(sender: AnyObject) {
         tipCalculator.taxPercentage = Double(taxPercentageSlider.value) / 100
@@ -26,29 +28,39 @@ class ViewController: UIViewController {
     }
     @IBAction func calculateTapped(sender: AnyObject) {
         tipCalculator.total = Double((totalInput.text as NSString).doubleValue)
-        let possibleTips = tipCalculator.returnPossibleTips()
-        var results = ""
-        var keys = Array(possibleTips.keys)
-        sort(&keys)
-        for tipPercentage in keys {
-            var tipValue = possibleTips[tipPercentage]!
-            var formattedTipValue = String(format: "%0.2f", tipValue.tipAmount)
-            var formattedTotalValue = String(format: "%0.2f", tipValue.total)
-            results += "\(tipPercentage)%: Tip(\(formattedTipValue)) Total(\(formattedTotalValue)) \n"
-        }
-        
-        resultTextView.text = results
+        possibleTips = tipCalculator.returnPossibleTips()
+        sortedKeys = sorted(Array(possibleTips.keys))
+        resultsTextView.reloadData()
     }
     
     func refreshUI() {
         totalInput.text = String(format: "%0.2f", tipCalculator.total)
         taxPercentageSlider.value = Float(tipCalculator.taxPercentage) * 100
         taxPercentageLabel.text = "Tax Percentage (\(Int(taxPercentageSlider.value))%):"
-        resultTextView.text = ""
+        resultsTextView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.sortedKeys.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: "tipInfoCell")
+        let tipPercentage = sortedKeys[indexPath.row]
+        let tipAmount = possibleTips[tipPercentage]!.tipAmount
+        let totalAmount = possibleTips[tipPercentage]!.totalAmount
+        
+        cell.textLabel?.text = "\(tipPercentage)%:"
+        cell.detailTextLabel?.text = String(format: "Tip: $%0.2f, Total: $%0.2f", tipAmount, totalAmount)
+        
+        return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.possibleTips = tipCalculator.returnPossibleTips()
+        self.sortedKeys = sorted(Array(possibleTips.keys))
+
         self.refreshUI()
         // Do any additional setup after loading the view, typically from a nib.
     }
