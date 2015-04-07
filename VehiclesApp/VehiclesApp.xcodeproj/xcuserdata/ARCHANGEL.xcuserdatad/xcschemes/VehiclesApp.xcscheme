@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "192717F81AD03D2E0036C26C"
-               BuildableName = "VehiclesApplication.app"
-               BlueprintName = "VehiclesApplication"
-               ReferencedContainer = "container:VehiclesApplication.xcodeproj">
+               BlueprintIdentifier = "195C88F71AD2B9A200CB95B1"
+               BuildableName = "VehiclesApp.app"
+               BlueprintName = "VehiclesApp"
+               ReferencedContainer = "container:VehiclesApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1927180D1AD03D2E0036C26C"
-               BuildableName = "VehiclesApplicationTests.xctest"
-               BlueprintName = "VehiclesApplicationTests"
-               ReferencedContainer = "container:VehiclesApplication.xcodeproj">
+               BlueprintIdentifier = "195C890C1AD2B9A200CB95B1"
+               BuildableName = "VehiclesAppTests.xctest"
+               BlueprintName = "VehiclesAppTests"
+               ReferencedContainer = "container:VehiclesApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1927180D1AD03D2E0036C26C"
-               BuildableName = "VehiclesApplicationTests.xctest"
-               BlueprintName = "VehiclesApplicationTests"
-               ReferencedContainer = "container:VehiclesApplication.xcodeproj">
+               BlueprintIdentifier = "195C890C1AD2B9A200CB95B1"
+               BuildableName = "VehiclesAppTests.xctest"
+               BlueprintName = "VehiclesAppTests"
+               ReferencedContainer = "container:VehiclesApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "192717F81AD03D2E0036C26C"
-            BuildableName = "VehiclesApplication.app"
-            BlueprintName = "VehiclesApplication"
-            ReferencedContainer = "container:VehiclesApplication.xcodeproj">
+            BlueprintIdentifier = "195C88F71AD2B9A200CB95B1"
+            BuildableName = "VehiclesApp.app"
+            BlueprintName = "VehiclesApp"
+            ReferencedContainer = "container:VehiclesApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "192717F81AD03D2E0036C26C"
-            BuildableName = "VehiclesApplication.app"
-            BlueprintName = "VehiclesApplication"
-            ReferencedContainer = "container:VehiclesApplication.xcodeproj">
+            BlueprintIdentifier = "195C88F71AD2B9A200CB95B1"
+            BuildableName = "VehiclesApp.app"
+            BlueprintName = "VehiclesApp"
+            ReferencedContainer = "container:VehiclesApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,10 +95,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "192717F81AD03D2E0036C26C"
-            BuildableName = "VehiclesApplication.app"
-            BlueprintName = "VehiclesApplication"
-            ReferencedContainer = "container:VehiclesApplication.xcodeproj">
+            BlueprintIdentifier = "195C88F71AD2B9A200CB95B1"
+            BuildableName = "VehiclesApp.app"
+            BlueprintName = "VehiclesApp"
+            ReferencedContainer = "container:VehiclesApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

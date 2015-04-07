@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>VehiclesApplication.xcscheme</key>
+		<key>VehiclesApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>192717F81AD03D2E0036C26C</key>
+		<key>195C88F71AD2B9A200CB95B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1927180D1AD03D2E0036C26C</key>
+		<key>195C890C1AD2B9A200CB95B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

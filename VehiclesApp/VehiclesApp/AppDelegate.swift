@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  VehiclesApplication
+//  VehiclesApp
 //
-//  Created by ARCHANGEL on 4/4/15.
+//  Created by ARCHANGEL on 4/6/15.
 //  Copyright (c) 2015 ARCHANGEL. All rights reserved.
 //
 
