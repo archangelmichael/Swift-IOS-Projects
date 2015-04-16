@@ -7,3 +7,20 @@
 //
 
 import Foundation
+class Square: Shape {
+    var sideLength: Double
+    
+    init(side: Double, name: String) {
+        self.sideLength = side
+        super.init(name: name)
+        numberOfSides = 4
+    }
+    
+    override func description() -> String {
+        return "A square with sides of \(self.sideLength)"
+    }
+    
+    func calcArea() -> Double {
+        return self.sideLength * self.sideLength
+    }
+}
