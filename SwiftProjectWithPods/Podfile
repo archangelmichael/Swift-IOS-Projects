@@ -1,0 +1,10 @@
+platform :ios, '7.0'
+
+target 'SwiftProjectWithPods' do
+pod 'AFNetworking', '~> 2.5'
+end
+
+target 'SwiftProjectWithPodsTests' do
+
+end
+
