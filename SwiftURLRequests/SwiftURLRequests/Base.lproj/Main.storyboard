@@ -44,7 +44,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSendRequest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FZq-6g-YEm"/>
+                                    <action selector="onSendRequest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="549-8W-Dsj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TKc-Mg-RtQ">
@@ -55,7 +55,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onSendRequest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rsy-gL-wLB"/>
-                                    <action selector="onSendRequestUsingNSURLSession:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Yp8-4y-ou6"/>
+                                    <action selector="onSendRequestUsingNSURLSession:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mBF-JP-43V"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bXG-6q-h6e">
@@ -87,7 +87,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onSendRequest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tRw-Ab-50V"/>
-                                    <action selector="onSendRequestUsingNSURLConnection:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Erd-8a-KPZ"/>
+                                    <action selector="onSendRequestUsingNSURLConnection:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9kZ-w6-fhg"/>
                                 </connections>
                             </button>
                         </subviews>

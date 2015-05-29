@@ -40,6 +40,60 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
 
 // BUTTONS ACTIONS
+    
+    @IBAction func onSendGeneralRequest(sender: AnyObject) {
+        var googleUrl = NSURL(string: "http://google.ca")
+        var request = NSMutableURLRequest(URL: googleUrl!)
+        // Set Method
+        request.HTTPMethod = "GET"
+        // Set Sent Data
+        var params = ["username":"jameson", "password":"password"] as Dictionary<String, String>
+        var err: NSError?
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
+        // Set Headers
+        request.addValue("text/html", forHTTPHeaderField: "Content-Type")
+        var session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            if((error) != nil) {
+                println(error.localizedDescription)
+            }
+            
+            var strData = NSString(data: data, encoding: NSASCIIStringEncoding)
+            println(strData)
+        })
+        
+        task.resume()
+    }
+    
+    func handleRequestResponce(data: NSData!, response:NSURLResponse!, error: NSError!) -> Void {
+        println("Response: \(response)")
+        var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
+        println("Body: \(strData)")
+        var err: NSError?
+        var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as? NSDictionary
+        
+        // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
+        if(err != nil) {
+            println(err!.localizedDescription)
+            let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
+            println("Error could not parse JSON: '\(jsonStr)'")
+        }
+        else {
+            // The JSONObjectWithData constructor didn't return an error. But, we should still
+            // check and make sure that json has a value using optional binding.
+            if let parseJSON = json {
+                // Okay, the parsedJSON is here, let's get the value for 'success' out of it
+                var success = parseJSON["success"] as? Int
+                println("Succes: \(success)")
+            }
+            else {
+                // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
+                let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
+                println("Error could not parse JSON: \(jsonStr)")
+            }
+        }
+    }
+    
     @IBAction func onSendRequest(sender: AnyObject) {
         url = urlInput.text;
         if  count(url) <= 0 {
@@ -112,6 +166,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             and then deal with the data received in the appropriate delegate methods.
         */
     }
+
+    
     
 // TEXT FIELD DELEGATE METHODS
     func textFieldShouldReturn(textField: UITextField) -> Bool {
