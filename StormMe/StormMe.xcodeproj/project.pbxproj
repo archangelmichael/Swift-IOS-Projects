@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		197806CF1B1C4B7F00B44F2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197806CE1B1C4B7F00B44F2E /* AppDelegate.swift */; };
+		197806D11B1C4B7F00B44F2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197806D01B1C4B7F00B44F2E /* ViewController.swift */; };
+		197806D41B1C4B7F00B44F2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 197806D21B1C4B7F00B44F2E /* Main.storyboard */; };
+		197806D61B1C4B7F00B44F2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 197806D51B1C4B7F00B44F2E /* Images.xcassets */; };
+		197806D91B1C4B7F00B44F2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197806D71B1C4B7F00B44F2E /* LaunchScreen.xib */; };
+		197806E51B1C4B7F00B44F2E /* StormMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197806E41B1C4B7F00B44F2E /* StormMeTests.swift */; };
+		197806EF1B1C547D00B44F2E /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197806EE1B1C547D00B44F2E /* CurrentWeather.swift */; };
+		197806F41B1C963700B44F2E /* arena-mladost.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 197806F11B1C963700B44F2E /* arena-mladost.gpx */; };
+		197806F51B1C963700B44F2E /* home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 197806F21B1C963700B44F2E /* home.gpx */; };
+		197806F61B1C963700B44F2E /* oryx.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 197806F31B1C963700B44F2E /* oryx.gpx */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		197806DF1B1C4B7F00B44F2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 197806C11B1C4B7F00B44F2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 197806C81B1C4B7F00B44F2E;
+			remoteInfo = StormMe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		197806C91B1C4B7F00B44F2E /* StormMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StormMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		197806CD1B1C4B7F00B44F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		197806CE1B1C4B7F00B44F2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		197806D01B1C4B7F00B44F2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		197806D31B1C4B7F00B44F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		197806D51B1C4B7F00B44F2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		197806D81B1C4B7F00B44F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		197806DE1B1C4B7F00B44F2E /* StormMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StormMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		197806E31B1C4B7F00B44F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		197806E41B1C4B7F00B44F2E /* StormMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormMeTests.swift; sourceTree = "<group>"; };
+		197806EE1B1C547D00B44F2E /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		197806F11B1C963700B44F2E /* arena-mladost.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "arena-mladost.gpx"; sourceTree = "<group>"; };
+		197806F21B1C963700B44F2E /* home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.gpx; sourceTree = "<group>"; };
+		197806F31B1C963700B44F2E /* oryx.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = oryx.gpx; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		197806C61B1C4B7F00B44F2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197806DB1B1C4B7F00B44F2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		197806C01B1C4B7F00B44F2E = {
+			isa = PBXGroup;
+			children = (
+				197806F01B1C962000B44F2E /* Locations */,
+				197806CB1B1C4B7F00B44F2E /* StormMe */,
+				197806E11B1C4B7F00B44F2E /* StormMeTests */,
+				197806CA1B1C4B7F00B44F2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		197806CA1B1C4B7F00B44F2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				197806C91B1C4B7F00B44F2E /* StormMe.app */,
+				197806DE1B1C4B7F00B44F2E /* StormMeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		197806CB1B1C4B7F00B44F2E /* StormMe */ = {
+			isa = PBXGroup;
+			children = (
+				197806CE1B1C4B7F00B44F2E /* AppDelegate.swift */,
+				197806D01B1C4B7F00B44F2E /* ViewController.swift */,
+				197806D21B1C4B7F00B44F2E /* Main.storyboard */,
+				197806D51B1C4B7F00B44F2E /* Images.xcassets */,
+				197806D71B1C4B7F00B44F2E /* LaunchScreen.xib */,
+				197806CC1B1C4B7F00B44F2E /* Supporting Files */,
+				197806EE1B1C547D00B44F2E /* CurrentWeather.swift */,
+			);
+			path = StormMe;
+			sourceTree = "<group>";
+		};
+		197806CC1B1C4B7F00B44F2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				197806CD1B1C4B7F00B44F2E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		197806E11B1C4B7F00B44F2E /* StormMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				197806E41B1C4B7F00B44F2E /* StormMeTests.swift */,
+				197806E21B1C4B7F00B44F2E /* Supporting Files */,
+			);
+			path = StormMeTests;
+			sourceTree = "<group>";
+		};
+		197806E21B1C4B7F00B44F2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				197806E31B1C4B7F00B44F2E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		197806F01B1C962000B44F2E /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				197806F11B1C963700B44F2E /* arena-mladost.gpx */,
+				197806F21B1C963700B44F2E /* home.gpx */,
+				197806F31B1C963700B44F2E /* oryx.gpx */,
+			);
+			name = Locations;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		197806C81B1C4B7F00B44F2E /* StormMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 197806E81B1C4B7F00B44F2E /* Build configuration list for PBXNativeTarget "StormMe" */;
+			buildPhases = (
+				197806C51B1C4B7F00B44F2E /* Sources */,
+				197806C61B1C4B7F00B44F2E /* Frameworks */,
+				197806C71B1C4B7F00B44F2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StormMe;
+			productName = StormMe;
+			productReference = 197806C91B1C4B7F00B44F2E /* StormMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		197806DD1B1C4B7F00B44F2E /* StormMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 197806EB1B1C4B7F00B44F2E /* Build configuration list for PBXNativeTarget "StormMeTests" */;
+			buildPhases = (
+				197806DA1B1C4B7F00B44F2E /* Sources */,
+				197806DB1B1C4B7F00B44F2E /* Frameworks */,
+				197806DC1B1C4B7F00B44F2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				197806E01B1C4B7F00B44F2E /* PBXTargetDependency */,
+			);
+			name = StormMeTests;
+			productName = StormMeTests;
+			productReference = 197806DE1B1C4B7F00B44F2E /* StormMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		197806C11B1C4B7F00B44F2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = archangel;
+				TargetAttributes = {
+					197806C81B1C4B7F00B44F2E = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					197806DD1B1C4B7F00B44F2E = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 197806C81B1C4B7F00B44F2E;
+					};
+				};
+			};
+			buildConfigurationList = 197806C41B1C4B7F00B44F2E /* Build configuration list for PBXProject "StormMe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 197806C01B1C4B7F00B44F2E;
+			productRefGroup = 197806CA1B1C4B7F00B44F2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				197806C81B1C4B7F00B44F2E /* StormMe */,
+				197806DD1B1C4B7F00B44F2E /* StormMeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		197806C71B1C4B7F00B44F2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197806D41B1C4B7F00B44F2E /* Main.storyboard in Resources */,
+				197806F51B1C963700B44F2E /* home.gpx in Resources */,
+				197806D91B1C4B7F00B44F2E /* LaunchScreen.xib in Resources */,
+				197806F41B1C963700B44F2E /* arena-mladost.gpx in Resources */,
+				197806D61B1C4B7F00B44F2E /* Images.xcassets in Resources */,
+				197806F61B1C963700B44F2E /* oryx.gpx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197806DC1B1C4B7F00B44F2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		197806C51B1C4B7F00B44F2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197806D11B1C4B7F00B44F2E /* ViewController.swift in Sources */,
+				197806EF1B1C547D00B44F2E /* CurrentWeather.swift in Sources */,
+				197806CF1B1C4B7F00B44F2E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197806DA1B1C4B7F00B44F2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197806E51B1C4B7F00B44F2E /* StormMeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		197806E01B1C4B7F00B44F2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 197806C81B1C4B7F00B44F2E /* StormMe */;
+			targetProxy = 197806DF1B1C4B7F00B44F2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		197806D21B1C4B7F00B44F2E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				197806D31B1C4B7F00B44F2E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		197806D71B1C4B7F00B44F2E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				197806D81B1C4B7F00B44F2E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		197806E61B1C4B7F00B44F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		197806E71B1C4B7F00B44F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		197806E91B1C4B7F00B44F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StormMe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		197806EA1B1C4B7F00B44F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StormMe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		197806EC1B1C4B7F00B44F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StormMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StormMe.app/StormMe";
+			};
+			name = Debug;
+		};
+		197806ED1B1C4B7F00B44F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StormMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StormMe.app/StormMe";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		197806C41B1C4B7F00B44F2E /* Build configuration list for PBXProject "StormMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				197806E61B1C4B7F00B44F2E /* Debug */,
+				197806E71B1C4B7F00B44F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		197806E81B1C4B7F00B44F2E /* Build configuration list for PBXNativeTarget "StormMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				197806E91B1C4B7F00B44F2E /* Debug */,
+				197806EA1B1C4B7F00B44F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		197806EB1B1C4B7F00B44F2E /* Build configuration list for PBXNativeTarget "StormMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				197806EC1B1C4B7F00B44F2E /* Debug */,
+				197806ED1B1C4B7F00B44F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 197806C11B1C4B7F00B44F2E /* Project object */;
+}
