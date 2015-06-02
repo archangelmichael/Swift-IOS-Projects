@@ -25,15 +25,8 @@ class TicketCheckViewController : UIViewController, UICollectionViewDataSource, 
         self.drawLabel.text = drawTitle
         
         // Set collection view options
-        self.collectionView!.dataSource = self
-        self.collectionView!.delegate = self
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 90, height: 120)
-        self.collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        self.collectionView!.registerClass(UICollectionViewCell.self,
-            forCellWithReuseIdentifier: NUMBER_CELL_REUSE_ID)
-        self.collectionView!.backgroundColor = UIColor.whiteColor()
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -57,10 +50,6 @@ class TicketCheckViewController : UIViewController, UICollectionViewDataSource, 
         cell.backgroundColor = UIColor.orangeColor()
         return cell
     }
-    
-    
-    
-    
     
     @IBAction func onCheckTicket(sender: AnyObject) {
         
