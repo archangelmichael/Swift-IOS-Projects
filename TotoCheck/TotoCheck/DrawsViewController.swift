@@ -50,16 +50,14 @@ class DrawsViewController : UIViewController, UITextFieldDelegate {
         draws = []
         self.validateDraw(self.viewFirstDraw)
         if !isFirstDrawOK {
-            println(self.errorMessage)
-            // TODO: SHOW ALERT
+            self.showAlertView("Wrong Input", message: self.errorMessage)
             return
         }
         
         if numberOfDraws == 2 {
             self.validateDraw(self.viewSecondDraw)
             if !isSecondDrawOK {
-                println(self.errorMessage)
-                // TODO: SHOW ALERT
+                self.showAlertView("Wrong Input", message: self.errorMessage)
                 return
             }
         }
@@ -143,32 +141,6 @@ class DrawsViewController : UIViewController, UITextFieldDelegate {
         navigationController?.popViewControllerAnimated(true)
     }
     
-    // Set self as delegate for all text fields
-    func setTextViewDelegates() {
-        for index in 1...6 {
-            ((self.viewFirstDraw.viewWithTag(index)) as! UITextField).delegate = self
-            ((self.viewSecondDraw.viewWithTag(index)) as! UITextField).delegate = self
-        }
-    }
-    
-    // Restrict inputs to 2 symbols
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let newLength = count(textField.text.utf16) + count(string.utf16) - range.length
-        return newLength <= 2 // Bool
-    }
-    
-    // Hide keyboard on DONE
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true;
-    }
-    
-    // Hide keyboard on tap anywhere else
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
-    }
-    
     // Hides 6th input field
     func hide6thNumberFrom(view: UIView) -> Void {
         view.viewWithTag(6)?.hidden = true
@@ -185,6 +157,9 @@ class DrawsViewController : UIViewController, UITextFieldDelegate {
     
     // Set gradients to draw views
     func setGradientToView(view: UIView) -> Void {
+        view.layer.cornerRadius = 10
+        view.clipsToBounds = true
+        
         let gradient : CAGradientLayer = CAGradientLayer()
         gradient.frame = view.bounds
         let arrayColors = [BOTTOM_COLOR.CGColor, TOP_COLOR.CGColor]
@@ -195,5 +170,40 @@ class DrawsViewController : UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func showAlertView(title: String, message: String) -> Void {
+        let networkIssueController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+        networkIssueController.addAction(okButton)
+        self.presentViewController(networkIssueController, animated: true, completion: nil)
+    }
+}
+
+extension DrawsViewController : UITextFieldDelegate {
+    // Hide keyboard on DONE
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Set self as delegate for all text fields
+    func setTextViewDelegates() {
+        for index in 1...6 {
+            ((self.viewFirstDraw.viewWithTag(index)) as! UITextField).delegate = self
+            ((self.viewSecondDraw.viewWithTag(index)) as! UITextField).delegate = self
+        }
+    }
+    
+    // Restrict inputs to 2 symbols
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let newLength = count(textField.text.utf16) + count(string.utf16) - range.length
+        return newLength <= 2 // Bool
+    }
+    
+    // Hide keyboard on tap anywhere else
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
     }
 }

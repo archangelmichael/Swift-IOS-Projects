@@ -22,9 +22,7 @@ let SEGUE_6_49 : String = "segue6from49"
 let BUTTON_6_49_TAG : Int = 49
 
 let SEGUE_TO_TICKET_CHECK : String = "segueToTicketCheck"
-
 let BUTTONS_CORNER_RADIUS : CGFloat = 10.0
-let NUMBER_CELL_REUSE_ID : String = "numberCell"
 
 let TOP_COLOR: UIColor = UIColor(red: 15/255, green: 207/255, blue: 223/255, alpha: 1)
 let BOTTOM_COLOR: UIColor = UIColor(red: 71/255, green: 192/255, blue: 144/255, alpha: 1)

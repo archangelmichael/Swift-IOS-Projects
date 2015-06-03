@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19090CCF1B1E3902002DA332 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19090CCD1B1E3902002DA332 /* CustomCollectionViewCell.swift */; };
+		19090CD01B1E3902002DA332 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19090CCE1B1E3902002DA332 /* CustomCollectionViewCell.xib */; };
 		197807061B1D86BC00B44F2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197807051B1D86BC00B44F2E /* AppDelegate.swift */; };
 		197807081B1D86BC00B44F2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197807071B1D86BC00B44F2E /* ViewController.swift */; };
 		1978070B1B1D86BC00B44F2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 197807091B1D86BC00B44F2E /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19090CCD1B1E3902002DA332 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		19090CCE1B1E3902002DA332 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		197807001B1D86BC00B44F2E /* TotoCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TotoCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197807041B1D86BC00B44F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		197807051B1D86BC00B44F2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 		19D465F71B1D9F7A0095FA13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				19090CCD1B1E3902002DA332 /* CustomCollectionViewCell.swift */,
+				19090CCE1B1E3902002DA332 /* CustomCollectionViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 				1978070B1B1D86BC00B44F2E /* Main.storyboard in Resources */,
 				197807101B1D86BC00B44F2E /* LaunchScreen.xib in Resources */,
 				1978070D1B1D86BC00B44F2E /* Images.xcassets in Resources */,
+				19090CD01B1E3902002DA332 /* CustomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1978072C1B1D96AF00B44F2E /* DrawsViewController.swift in Sources */,
+				19090CCF1B1E3902002DA332 /* CustomCollectionViewCell.swift in Sources */,
 				197807081B1D86BC00B44F2E /* ViewController.swift in Sources */,
 				197807061B1D86BC00B44F2E /* AppDelegate.swift in Sources */,
 				197807261B1D8D2700B44F2E /* Constants.swift in Sources */,

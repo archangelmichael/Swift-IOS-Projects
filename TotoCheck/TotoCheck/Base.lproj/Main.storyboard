@@ -388,7 +388,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onGoBack:" destination="FT6-g6-p3M" eventType="touchUpInside" id="kwq-xW-R1h"/>
+                                    <action selector="onGoBack:" destination="FT6-g6-p3M" eventType="touchUpInside" id="n1k-wo-Bpn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE NUMBERS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdN-RU-Kv7">
@@ -397,11 +397,11 @@
                                 <color key="textColor" red="0.058823529409999999" green="0.81176470590000005" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zpT-rg-uxK">
-                                <rect key="frame" x="0.0" y="115" width="320" height="317"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zpT-rg-uxK">
+                                <rect key="frame" x="16" y="115" width="288" height="383"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.81176470590000005" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="317" id="ffd-TW-EId"/>
+                                    <constraint firstAttribute="height" constant="383" id="ffd-TW-EId"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hTm-zc-2cI">
                                     <size key="itemSize" width="50" height="50"/>
@@ -427,8 +427,8 @@
                                 <color key="textColor" red="0.058823529409999999" green="0.81176470590000005" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z03-Uf-dwv">
-                                <rect key="frame" x="16" y="440" width="288" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z03-Uf-dwv">
+                                <rect key="frame" x="57" y="506" width="206" height="36"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="CHECK YOU TICKETS">
@@ -446,9 +446,13 @@
                             <constraint firstAttribute="centerX" secondItem="zpT-rg-uxK" secondAttribute="centerX" id="0wg-G3-VM1"/>
                             <constraint firstItem="0bQ-lT-1a6" firstAttribute="top" secondItem="A0I-cA-fP6" secondAttribute="bottom" id="3iw-It-fV4"/>
                             <constraint firstAttribute="centerX" secondItem="gmr-hY-s78" secondAttribute="centerX" constant="-0.5" id="53J-wC-tj1"/>
+                            <constraint firstItem="zpT-rg-uxK" firstAttribute="leading" secondItem="Njx-Kf-M9u" secondAttribute="leadingMargin" id="CG5-WM-ipY"/>
                             <constraint firstItem="NdN-RU-Kv7" firstAttribute="top" secondItem="gmr-hY-s78" secondAttribute="bottom" constant="19" id="DVx-Tj-eOA"/>
                             <constraint firstAttribute="centerX" secondItem="NdN-RU-Kv7" secondAttribute="centerX" constant="-0.5" id="Hff-uT-T5q"/>
+                            <constraint firstItem="Z03-Uf-dwv" firstAttribute="top" secondItem="zpT-rg-uxK" secondAttribute="bottom" constant="8" id="Hmx-Bl-lpE"/>
+                            <constraint firstAttribute="centerX" secondItem="Z03-Uf-dwv" secondAttribute="centerX" id="Ml7-ZG-QPg"/>
                             <constraint firstItem="0bQ-lT-1a6" firstAttribute="leading" secondItem="Njx-Kf-M9u" secondAttribute="leadingMargin" id="PTM-1Z-Ybq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zpT-rg-uxK" secondAttribute="trailing" id="Utf-AW-bBz"/>
                             <constraint firstItem="zpT-rg-uxK" firstAttribute="top" secondItem="NdN-RU-Kv7" secondAttribute="bottom" constant="8" id="VaR-jc-xAg"/>
                             <constraint firstItem="gmr-hY-s78" firstAttribute="top" secondItem="A0I-cA-fP6" secondAttribute="bottom" constant="10" id="cHa-VC-Vea"/>
                         </constraints>
