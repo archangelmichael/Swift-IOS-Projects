@@ -14,7 +14,7 @@ protocol DateSimulatorDelegate {
 }
 
 class Man : Speaker {
-    func speak() {
+    @objc func speak() {
         println("Hi. I am Adam ")
     }
     
@@ -28,7 +28,7 @@ class Man : Speaker {
 }
 
 class Woman : Speaker {
-    func speak() {
+    @objc func speak() {
         println("Hi. I am Eve ")
     }
     
@@ -75,12 +75,13 @@ class LogginDateSimulator: DateSimulatorDelegate {
 var speaker: Speaker
 speaker = Man()
 speaker.speak()
-speaker.tellJoke!()
-(speaker as Man).act()
+// speaker.tellJoke()
+(speaker as! Man).act()
 
 speaker = Woman()
 speaker.speak()
-speaker.tellJoke!()
+// speaker.tellJoke!()
+println()
 
 let simulation = DateSimulator(adam: Man(), eve: Woman())
 simulation.delegate = LogginDateSimulator()
