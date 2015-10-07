@@ -58,12 +58,22 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func addActionsTo(alertController: UIAlertController, isSimple: Bool) {
-        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let callActionHandler = { (action:UIAlertAction!) -> Void in
+            let actionName = action.title
+            let alertMessage = UIAlertController(
+                title: "Unavailable \(actionName)",
+                message: "Sorry",
+                preferredStyle: .Alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alertMessage, animated: true, completion: nil)
+        }
+        
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: callActionHandler)
         alertController.addAction(okAction)
         if !isSimple {
-            let closeAction = UIAlertAction(title: "CLOSE", style: .Destructive, handler: nil)
+            let closeAction = UIAlertAction(title: "CLOSE", style: .Destructive, handler: callActionHandler)
             alertController.addAction(closeAction)
-            let cancelAction = UIAlertAction(title: "CANCEL", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "CANCEL", style: .Cancel, handler: callActionHandler)
             alertController.addAction(cancelAction)
         }
     }
