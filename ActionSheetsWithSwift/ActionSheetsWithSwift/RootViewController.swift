@@ -8,11 +8,22 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+enum ActionType : Int {
+    case Alert = 0
+    case ActionsCount
+    static let allActions = [Alert]
+}
 
+class RootViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var actionsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.actionsTableView.dataSource = self;
+        self.actionsTableView.delegate = self;
+        self.navigationItem.title = UIDevice.currentDevice().name
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +32,47 @@ class RootViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func showAlert() {
+        
+    }
+    
+    @IBAction func showNothing() {
+        
+    }
+    
+    // MARK: - UITableViewDelegate methods
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        let action = ActionType.allActions[indexPath.row];
+        switch action {
+            case .Alert: self.showAlert()
+            default : self.showNothing()
+        }
+    }
+    
+    // MARK: - UITableViewDataSource methods
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1;
+    }
 
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ActionType.ActionsCount.rawValue;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let action = ActionType.allActions[indexPath.row];
+        let actionName = "\(action)"
+        
+        let cellId = "CustomCell"
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as UITableViewCell!
+        if cell == nil {
+            cell = UITableViewCell(style:.Default, reuseIdentifier: cellId)
+        }
+        
+        cell!.textLabel?.text = actionName
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
         <scene sceneID="C7c-hQ-zT1">
             <objects>
-                <viewController id="yhA-pN-gUH" customClass="RootViewController" customModule="ActionSheetsWithSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="yhA-pN-gUH" customClass="RootViewController" customModule="ActionSheetsWithSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jZe-id-cmt"/>
                         <viewControllerLayoutGuide type="bottom" id="1JB-dT-Lus"/>
@@ -16,9 +17,34 @@
                     <view key="view" contentMode="scaleToFill" id="Mtb-LZ-yZg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w6s-YJ-cY2">
+                                <rect key="frame" x="20" y="72" width="560" height="520"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomCell" id="sLa-QG-8Vz">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sLa-QG-8Vz" id="WF4-fz-4CQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="w6s-YJ-cY2" secondAttribute="leading" id="0gL-1t-G77"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w6s-YJ-cY2" secondAttribute="trailing" id="FhU-1v-kQ3"/>
+                            <constraint firstItem="1JB-dT-Lus" firstAttribute="top" secondItem="w6s-YJ-cY2" secondAttribute="bottom" constant="8" id="Nbu-UL-e8O"/>
+                            <constraint firstItem="w6s-YJ-cY2" firstAttribute="top" secondItem="jZe-id-cmt" secondAttribute="bottom" constant="8" id="lGi-7B-a8j"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zjq-cc-qLd"/>
+                    <connections>
+                        <outlet property="actionsTableView" destination="w6s-YJ-cY2" id="5PK-K2-1Xd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hvg-2K-iG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
