@@ -9,9 +9,12 @@
 import UIKit
 
 enum ActionType : Int {
-    case Alert = 0
+    case SimpleAlert = 0
+    case ComplexAlert
+    case SimpleActionSheet
+    case ComplexActionSheet
     case ActionsCount
-    static let allActions = [Alert]
+    static let allActions = [SimpleAlert, ComplexAlert, SimpleActionSheet, ComplexActionSheet]
 }
 
 class RootViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -32,8 +35,40 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showAlert() {
-        
+    @IBAction func showSimpleAlert() {
+        let alertController = UIAlertController(title: "Simple Alert Message", message: "No choice!", preferredStyle: .Alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(defaultAction)
+        self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func showComplexAlert() {
+        let alertController = UIAlertController(title: "Complex Alert Message", message: "Select option", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(okAction)
+        let closeAction = UIAlertAction(title: "CLOSE", style: .Destructive, handler: nil)
+        alertController.addAction(closeAction)
+        let cancelAction = UIAlertAction(title: "CANCEL", style: .Cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func showSimpleActionSheet() {
+        let alertController = UIAlertController(title: "Simple Action Sheet", message: "No choice!", preferredStyle: .ActionSheet)
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(defaultAction)
+        self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func showComplexActionSheet() {
+        let alertController = UIAlertController(title: "Complex Action Sheet", message: "Select option", preferredStyle: .ActionSheet)
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(okAction)
+        let closeAction = UIAlertAction(title: "CLOSE", style: .Destructive, handler: nil)
+        alertController.addAction(closeAction)
+        let cancelAction = UIAlertAction(title: "CANCEL", style: .Cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
     }
     
     @IBAction func showNothing() {
@@ -45,7 +80,10 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         let action = ActionType.allActions[indexPath.row];
         switch action {
-            case .Alert: self.showAlert()
+            case .SimpleAlert: self.showSimpleAlert()
+            case .ComplexAlert: self.showComplexAlert()
+            case .SimpleActionSheet: self.showSimpleActionSheet()
+            case .ComplexActionSheet: self.showComplexActionSheet()
             default : self.showNothing()
         }
     }
