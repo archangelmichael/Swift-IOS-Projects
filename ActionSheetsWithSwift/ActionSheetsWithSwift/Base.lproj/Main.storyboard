@@ -202,6 +202,43 @@
             </objects>
             <point key="canvasLocation" x="1285" y="798"/>
         </scene>
+        <!--Forms View Controller-->
+        <scene sceneID="cmu-oT-1T1">
+            <objects>
+                <viewController id="jNP-q0-63s" customClass="FormsViewController" customModule="ActionSheetsWithSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SYZ-TW-vmw"/>
+                        <viewControllerLayoutGuide type="bottom" id="7wh-Fc-hcT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xct-4B-Xiq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDU-Sr-Mxv">
+                                <rect key="frame" x="60" y="114" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="WW0-vp-Qjk"/>
+                                    <constraint firstAttribute="height" constant="50" id="vUZ-il-U3q"/>
+                                </constraints>
+                                <state key="normal" title="Simple Form"/>
+                                <connections>
+                                    <action selector="onComplexActionSheet:" destination="maG-Ch-O5o" eventType="touchUpInside" id="7VK-Sp-NLf"/>
+                                    <action selector="onSimpleForm:" destination="jNP-q0-63s" eventType="touchUpInside" id="0eZ-r4-NQm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dDU-Sr-Mxv" firstAttribute="centerX" secondItem="xct-4B-Xiq" secondAttribute="centerX" id="eGi-bG-zGc"/>
+                            <constraint firstItem="dDU-Sr-Mxv" firstAttribute="top" secondItem="SYZ-TW-vmw" secondAttribute="bottom" constant="50" id="huA-Ua-INv"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RPU-US-fXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66" y="1498"/>
+        </scene>
         <!--Custom Presentation View Controller-->
         <scene sceneID="C7t-kj-WAO">
             <objects>
@@ -348,6 +385,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="ySG-rG-3Ok" kind="show" identifier="goToCustomPresentation" id="S07-O1-VPM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="oL7-27-DzW" style="IBUITableViewCellStyleDefault" id="ti1-jp-8pO">
+                                        <rect key="frame" x="0.0" y="240" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ti1-jp-8pO" id="ypI-BL-GhP">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Forms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oL7-27-DzW">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jNP-q0-63s" kind="show" id="smF-Dr-aIz"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
