@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Alerts View Controller-->
@@ -101,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="622" y="70"/>
         </scene>
-        <!--View Controller-->
+        <!--Popovers View Controller-->
         <scene sceneID="x9E-kN-1xO">
             <objects>
-                <viewController id="JYG-P5-WyO" sceneMemberID="viewController">
+                <viewController id="JYG-P5-WyO" customClass="PopoversViewController" customModule="ActionSheetsWithSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n5G-ZP-6oB"/>
                         <viewControllerLayoutGuide type="bottom" id="b7R-px-ghO"/>
@@ -114,10 +115,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="AFm-DB-5yU">
+                        <barButtonItem key="rightBarButtonItem" title="Show Popover" id="aZj-04-hPm">
+                            <connections>
+                                <action selector="onShowPopover:" destination="JYG-P5-WyO" id="7nG-IG-iVY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7E-sb-22P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="622" y="782"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1nI-fE-IN9">
+            <objects>
+                <viewController storyboardIdentifier="PopoverVCId" id="2xQ-WF-NDU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="98i-6H-MIR"/>
+                        <viewControllerLayoutGuide type="bottom" id="CBV-3M-NVX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4cY-Kz-XWU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POPOVER TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11J-JS-zUJ">
+                                <rect key="frame" x="51" y="20" width="219" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb8-ka-qKn">
+                                <rect key="frame" x="16" y="64" width="288" height="484"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vb8-ka-qKn" firstAttribute="top" secondItem="11J-JS-zUJ" secondAttribute="bottom" constant="8" id="9IR-WO-RHU"/>
+                            <constraint firstItem="CBV-3M-NVX" firstAttribute="top" secondItem="vb8-ka-qKn" secondAttribute="bottom" constant="20" id="XXo-s2-A0f"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="vb8-ka-qKn" secondAttribute="leading" id="Z9x-Id-LFl"/>
+                            <constraint firstItem="11J-JS-zUJ" firstAttribute="centerX" secondItem="4cY-Kz-XWU" secondAttribute="centerX" id="i8W-Aw-zLy"/>
+                            <constraint firstItem="11J-JS-zUJ" firstAttribute="top" secondItem="98i-6H-MIR" secondAttribute="bottom" id="quN-Ii-KWh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vb8-ka-qKn" secondAttribute="trailing" id="zST-g2-oaJ"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Plq-5v-lkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1285" y="798"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="C7t-kj-WAO">

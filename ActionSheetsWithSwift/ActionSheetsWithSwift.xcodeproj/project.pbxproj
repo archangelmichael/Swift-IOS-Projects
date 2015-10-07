@@ -14,6 +14,8 @@
 		1943814A1BC4FBE5008CD87B /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194381491BC4FBE5008CD87B /* Main~iPad.storyboard */; settings = {ASSET_TAGS = (); }; };
 		194381511BC53CA0008CD87B /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194381501BC53CA0008CD87B /* AlertsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		194381531BC53CAC008CD87B /* ActionSheetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194381521BC53CAC008CD87B /* ActionSheetsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		194381591BC54257008CD87B /* PopoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194381581BC54257008CD87B /* PopoverView.xib */; settings = {ASSET_TAGS = (); }; };
+		1943815B1BC542DA008CD87B /* PopoversViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943815A1BC542DA008CD87B /* PopoversViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		194381491BC4FBE5008CD87B /* Main~iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~iPad.storyboard"; sourceTree = "<group>"; };
 		194381501BC53CA0008CD87B /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		194381521BC53CAC008CD87B /* ActionSheetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetsViewController.swift; sourceTree = "<group>"; };
+		194381581BC54257008CD87B /* PopoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverView.xib; sourceTree = "<group>"; };
+		1943815A1BC542DA008CD87B /* PopoversViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoversViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 				194381431BC4FB8E008CD87B /* LaunchScreen.storyboard */,
 				194381481BC4FBCA008CD87B /* iPhone */,
 				194381471BC4FBBD008CD87B /* iPad */,
+				194381581BC54257008CD87B /* PopoverView.xib */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 			children = (
 				194381501BC53CA0008CD87B /* AlertsViewController.swift */,
 				194381521BC53CAC008CD87B /* ActionSheetsViewController.swift */,
+				1943815A1BC542DA008CD87B /* PopoversViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 				194381441BC4FB8E008CD87B /* LaunchScreen.storyboard in Resources */,
 				194381361BC4FB1E008CD87B /* Assets.xcassets in Resources */,
 				194381341BC4FB1E008CD87B /* Main.storyboard in Resources */,
+				194381591BC54257008CD87B /* PopoverView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1943815B1BC542DA008CD87B /* PopoversViewController.swift in Sources */,
 				194381531BC53CAC008CD87B /* ActionSheetsViewController.swift in Sources */,
 				1943812F1BC4FB1E008CD87B /* AppDelegate.swift in Sources */,
 				194381511BC53CA0008CD87B /* AlertsViewController.swift in Sources */,
