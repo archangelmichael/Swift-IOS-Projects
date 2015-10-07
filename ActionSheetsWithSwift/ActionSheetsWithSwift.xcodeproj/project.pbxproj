@@ -12,7 +12,8 @@
 		194381361BC4FB1E008CD87B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 194381351BC4FB1E008CD87B /* Assets.xcassets */; };
 		194381441BC4FB8E008CD87B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194381431BC4FB8E008CD87B /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		1943814A1BC4FBE5008CD87B /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194381491BC4FBE5008CD87B /* Main~iPad.storyboard */; settings = {ASSET_TAGS = (); }; };
-		1943814F1BC50009008CD87B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943814E1BC50009008CD87B /* RootViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		194381511BC53CA0008CD87B /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194381501BC53CA0008CD87B /* AlertsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		194381531BC53CAC008CD87B /* ActionSheetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194381521BC53CAC008CD87B /* ActionSheetsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		1943813A1BC4FB1E008CD87B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194381431BC4FB8E008CD87B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		194381491BC4FBE5008CD87B /* Main~iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~iPad.storyboard"; sourceTree = "<group>"; };
-		1943814E1BC50009008CD87B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		194381501BC53CA0008CD87B /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
+		194381521BC53CAC008CD87B /* ActionSheetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,8 @@
 		194381421BC4FB67008CD87B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1943814E1BC50009008CD87B /* RootViewController.swift */,
+				194381501BC53CA0008CD87B /* AlertsViewController.swift */,
+				194381521BC53CAC008CD87B /* ActionSheetsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -178,8 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194381531BC53CAC008CD87B /* ActionSheetsViewController.swift in Sources */,
 				1943812F1BC4FB1E008CD87B /* AppDelegate.swift in Sources */,
-				1943814F1BC50009008CD87B /* RootViewController.swift in Sources */,
+				194381511BC53CA0008CD87B /* AlertsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
