@@ -19,6 +19,7 @@ enum ActionType : Int {
 
 class RootViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    weak var selectedCell : UITableViewCell!
     @IBOutlet weak var actionsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -48,11 +49,13 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let actionMessage = isSimple ? "No choice available" : "Select action"
         
         let alertController = UIAlertController(title: actionTitle, message: actionMessage, preferredStyle: .ActionSheet)
-        alertController.popoverPresentationController?.sourceView = self.view
+        let anchorView : UIView = selectedCell != nil ? selectedCell : self.view
+        alertController.popoverPresentationController?.sourceView = anchorView
         alertController.popoverPresentationController?.sourceRect = CGRectMake(
-            self.view.bounds.size.width / 2.0,
-            self.view.bounds.size.height / 2.0,
+            anchorView.bounds.size.width / 2.0,
+            anchorView.bounds.size.height,
             1.0, 1.0);
+        alertController.popoverPresentationController?.permittedArrowDirections = .Up
         self.addActionsTo(alertController, isSimple: isSimple)
         self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
     }
@@ -84,6 +87,7 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - UITableViewDelegate methods
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedCell = tableView.cellForRowAtIndexPath(indexPath)
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         let action = ActionType.allActions[indexPath.row];
         switch action {
