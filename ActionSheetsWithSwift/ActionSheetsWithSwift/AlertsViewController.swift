@@ -10,15 +10,16 @@ import UIKit
 
 class AlertsViewController: UIViewController {
 
+    @IBOutlet weak var alertLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = UIDevice.currentDevice().name
-        // Do any additional setup after loading the view.
+        self.alertLabel.alpha = 0.0
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func onSimpleAlert(sender: AnyObject) {
@@ -38,14 +39,15 @@ class AlertsViewController: UIViewController {
     }
     
     func addActionsTo(alertController: UIAlertController, isSimple: Bool) {
+        weak var wself : AlertsViewController? = self
         let callActionHandler = { (action:UIAlertAction!) -> Void in
             let actionName = action.title
-            let alertMessage = UIAlertController(
-                title: "Unavailable \(actionName)",
-                message: "Sorry",
-                preferredStyle: .Alert)
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(alertMessage, animated: true, completion: nil)
+            if let sself = wself {
+                if let innerAlertResponseLabel = sself.alertLabel {
+                    innerAlertResponseLabel.text = "Unavailable \(actionName)"
+                    innerAlertResponseLabel.animateAsPopup()
+                }
+            }
         }
         
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: callActionHandler)

@@ -21,6 +21,7 @@
 		194381611BC5537D008CD87B /* ExamplePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194381601BC5537D008CD87B /* ExamplePresentationController.swift */; settings = {ASSET_TAGS = (); }; };
 		194381631BC55546008CD87B /* ExampleAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194381621BC55546008CD87B /* ExampleAnimatedTransitioning.swift */; settings = {ASSET_TAGS = (); }; };
 		194381651BC5566E008CD87B /* ExampleTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194381641BC5566E008CD87B /* ExampleTransitioningDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		19FE874E1BC55C290010E74A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE874D1BC55C290010E74A /* UIViewExtension.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		194381601BC5537D008CD87B /* ExamplePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePresentationController.swift; sourceTree = "<group>"; };
 		194381621BC55546008CD87B /* ExampleAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		194381641BC5566E008CD87B /* ExampleTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTransitioningDelegate.swift; sourceTree = "<group>"; };
+		19FE874D1BC55C290010E74A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				194381501BC53CA0008CD87B /* AlertsViewController.swift */,
 				194381521BC53CAC008CD87B /* ActionSheetsViewController.swift */,
 				1943815A1BC542DA008CD87B /* PopoversViewController.swift */,
+				19FE874D1BC55C290010E74A /* UIViewExtension.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19FE874E1BC55C290010E74A /* UIViewExtension.swift in Sources */,
 				1943815B1BC542DA008CD87B /* PopoversViewController.swift in Sources */,
 				194381631BC55546008CD87B /* ExampleAnimatedTransitioning.swift in Sources */,
 				1943815F1BC55210008CD87B /* CustomPresentationViewController.swift in Sources */,
@@ -365,6 +369,7 @@
 				1943813F1BC4FB1E008CD87B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

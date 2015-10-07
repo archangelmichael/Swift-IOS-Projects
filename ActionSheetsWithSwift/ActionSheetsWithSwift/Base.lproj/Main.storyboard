@@ -40,15 +40,31 @@
                                     <action selector="onComplexAlert:" destination="dbW-jF-BSL" eventType="touchUpInside" id="OYv-FY-Lnt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgY-yW-UOM">
+                                <rect key="frame" x="-4" y="64" width="328" height="22"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.019145764802631578" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="AVV-ma-q6i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YgY-yW-UOM" firstAttribute="leading" secondItem="9Tx-Yl-Qgi" secondAttribute="leadingMargin" constant="-20" id="7gx-t8-qdH"/>
+                            <constraint firstItem="YgY-yW-UOM" firstAttribute="top" secondItem="kJt-Ha-cUv" secondAttribute="bottom" id="RRY-gq-dpQ"/>
                             <constraint firstItem="lph-Jl-FxV" firstAttribute="top" secondItem="kJt-Ha-cUv" secondAttribute="bottom" constant="8" id="Tbh-rF-cXt"/>
                             <constraint firstItem="Uqc-BR-ltK" firstAttribute="centerX" secondItem="9Tx-Yl-Qgi" secondAttribute="centerX" id="VdK-k3-Opi"/>
                             <constraint firstItem="Uqc-BR-ltK" firstAttribute="top" secondItem="lph-Jl-FxV" secondAttribute="bottom" constant="8" id="XMx-i8-Sjg"/>
                             <constraint firstItem="lph-Jl-FxV" firstAttribute="centerX" secondItem="9Tx-Yl-Qgi" secondAttribute="centerX" id="cOp-EP-LIP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YgY-yW-UOM" secondAttribute="trailing" constant="-20" id="zn6-V3-GFy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alertLabel" destination="YgY-yW-UOM" id="heg-Be-Wpv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5c2-1f-Dy4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,15 +104,31 @@
                                     <action selector="onComplexActionSheet:" destination="maG-Ch-O5o" eventType="touchUpInside" id="JkY-qK-aBR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6s-BK-Sl6">
+                                <rect key="frame" x="-8" y="64" width="336" height="22"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.019145764799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="D1u-5e-Ibg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Phu-gV-Y5B" firstAttribute="top" secondItem="lQE-Nz-PsI" secondAttribute="bottom" constant="8" id="4R7-49-JcI"/>
                             <constraint firstItem="CUo-51-0FE" firstAttribute="top" secondItem="Phu-gV-Y5B" secondAttribute="bottom" constant="8" id="8zF-UV-d8e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t6s-BK-Sl6" secondAttribute="trailing" constant="-24" id="NSB-FY-5LJ"/>
                             <constraint firstItem="CUo-51-0FE" firstAttribute="centerX" secondItem="xLe-qI-ZWb" secondAttribute="centerX" id="VhZ-rl-rv1"/>
                             <constraint firstItem="Phu-gV-Y5B" firstAttribute="centerX" secondItem="xLe-qI-ZWb" secondAttribute="centerX" id="ZDa-3y-d3J"/>
+                            <constraint firstItem="t6s-BK-Sl6" firstAttribute="top" secondItem="lQE-Nz-PsI" secondAttribute="bottom" id="dGJ-uX-u6k"/>
+                            <constraint firstItem="t6s-BK-Sl6" firstAttribute="leading" secondItem="xLe-qI-ZWb" secondAttribute="leadingMargin" constant="-24" id="r5V-mK-XKy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="actionLabel" destination="t6s-BK-Sl6" id="ths-0b-Epx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0d-N3-awe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

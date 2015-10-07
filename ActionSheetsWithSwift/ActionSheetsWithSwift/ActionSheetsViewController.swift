@@ -10,9 +10,12 @@ import UIKit
 
 class ActionSheetsViewController: UIViewController {
 
+    @IBOutlet weak var actionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = UIDevice.currentDevice().name
+        self.actionLabel.alpha = 0.0
         // Do any additional setup after loading the view.
     }
 
@@ -45,14 +48,15 @@ class ActionSheetsViewController: UIViewController {
     }
     
     func addActionsTo(alertController: UIAlertController, isSimple: Bool) {
+        weak var wself : ActionSheetsViewController? = self
         let callActionHandler = { (action:UIAlertAction!) -> Void in
             let actionName = action.title
-            let alertMessage = UIAlertController(
-                title: "Unavailable \(actionName)",
-                message: "Sorry",
-                preferredStyle: .Alert)
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(alertMessage, animated: true, completion: nil)
+            if let sself = wself {
+                if let innerAlertResponseLabel = sself.actionLabel {
+                    innerAlertResponseLabel.text = "Unavailable \(actionName)"
+                    innerAlertResponseLabel.animateAsPopup()
+                }
+            }
         }
         
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: callActionHandler)
