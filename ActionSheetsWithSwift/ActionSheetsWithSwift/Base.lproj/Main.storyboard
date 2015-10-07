@@ -170,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="1285" y="798"/>
         </scene>
-        <!--View Controller-->
+        <!--Custom Presentation View Controller-->
         <scene sceneID="C7t-kj-WAO">
             <objects>
-                <viewController id="ySG-rG-3Ok" sceneMemberID="viewController">
+                <viewController id="ySG-rG-3Ok" customClass="CustomPresentationViewController" customModule="ActionSheetsWithSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bjN-cS-v2h"/>
                         <viewControllerLayoutGuide type="bottom" id="lsl-n0-lZk"/>
@@ -181,7 +181,27 @@
                     <view key="view" contentMode="scaleToFill" id="wbe-LS-OHU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike_traveler" translatesAutoresizingMaskIntoConstraints="NO" id="XjZ-0Q-Gbp">
+                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrJ-Ml-Cce">
+                                <rect key="frame" x="240" y="484" width="64" height="64"/>
+                                <state key="normal" backgroundImage="information"/>
+                                <connections>
+                                    <action selector="onInfo:" destination="ySG-rG-3Ok" eventType="touchUpInside" id="RoL-Jc-QYQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="XjZ-0Q-Gbp" secondAttribute="trailing" constant="-20" id="5Sx-fr-RAY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xrJ-Ml-Cce" secondAttribute="trailing" id="7YF-39-0nA"/>
+                            <constraint firstItem="lsl-n0-lZk" firstAttribute="top" secondItem="xrJ-Ml-Cce" secondAttribute="bottom" constant="20" id="Hrq-q5-ubg"/>
+                            <constraint firstItem="XjZ-0Q-Gbp" firstAttribute="top" secondItem="bjN-cS-v2h" secondAttribute="bottom" id="T3j-1x-JdQ"/>
+                            <constraint firstItem="XjZ-0Q-Gbp" firstAttribute="leading" secondItem="wbe-LS-OHU" secondAttribute="leadingMargin" constant="-20" id="TmQ-C9-XQO"/>
+                            <constraint firstItem="lsl-n0-lZk" firstAttribute="top" secondItem="XjZ-0Q-Gbp" secondAttribute="bottom" id="lLM-X9-i1K"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlL-C6-yVr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -313,4 +333,8 @@
             <point key="canvasLocation" x="-66" y="383"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bike_traveler" width="600" height="450"/>
+        <image name="information" width="64" height="64"/>
+    </resources>
 </document>
