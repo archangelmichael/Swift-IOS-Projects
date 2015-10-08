@@ -8,8 +8,11 @@
 
 import UIKit
 
-class FormsViewController: UIViewController {
+class FormsViewController: UIViewController, UIActionSheetDelegate, UIPopoverPresentationControllerDelegate, UserFormViewControllerDelegate {
 
+    var userDataPopover : UIPopoverController?
+    var userFormVC : UserFormViewController = UserFormViewController(nibName: "UserFormViewController", bundle: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -70,6 +73,58 @@ class FormsViewController: UIViewController {
             okAction?.enabled = username?.characters.count > 2
         }
     }
+    
+    @IBAction func onFullForm(sender: AnyObject) {
+        userFormVC = UserFormViewController(nibName: "UserFormViewController", bundle: nil)
+        userFormVC.delegate = self
+        switch UIDevice.currentDevice().userInterfaceIdiom {
+            case .Pad:
+                self.userDataPopover = UIPopoverController(contentViewController: userFormVC)
+                self.userDataPopover!.popoverContentSize = CGSizeMake(320, 430)
+                self.userDataPopover!.presentPopoverFromRect(
+                    sender.frame,
+                    inView: view,
+                    permittedArrowDirections: .Up,
+                    animated: true)
+            break
+            default:
+                // TODO: Change for iPhone
+                let sourceView = sender as? UIView
+                userFormVC.modalPresentationStyle = .Popover;
+                userFormVC.popoverPresentationController?.delegate = self;
+                userFormVC.popoverPresentationController?.sourceView = sourceView
+                self.presentViewController(userFormVC, animated: true, completion: nil)
+        }
+    }
+    
+    // MARK: -
+    func userDataChangedWithUsername(username: String, age: String, gender: String) {
+        print("Name : \(username) \n Age : \(age) \n Gender : \(gender)")
+        switch UIDevice.currentDevice().userInterfaceIdiom {
+            case .Pad:
+                self.userDataPopover!.dismissPopoverAnimated(true)
+                break
+            default:
+                userFormVC.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+    
+//    func presentationController(controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+//        let navigationController = UINavigationController(rootViewController: controller.presentedViewController)
+//        let btnDone = UIBarButtonItem(title: "Done", style: .Done, target: self, action: "dismiss")
+//        navigationController.topViewController!.navigationItem.rightBarButtonItem = btnDone
+//        return navigationController
+//    }
+//    
+//    func dismiss() {
+//        self.dismissViewControllerAnimated(true, completion: nil)
+//    }
+
+    
     /*
     // MARK: - Navigation
 

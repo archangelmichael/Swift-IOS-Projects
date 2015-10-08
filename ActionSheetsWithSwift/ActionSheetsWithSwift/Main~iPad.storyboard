@@ -374,11 +374,25 @@
                                     <action selector="onSimpleForm:" destination="hX4-8A-dER" eventType="touchUpInside" id="wJa-Ib-NpI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="La6-uz-2kg">
+                                <rect key="frame" x="150" y="172" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Tqf-g3-7wg"/>
+                                    <constraint firstAttribute="width" constant="300" id="djt-Fc-v14"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Full Form"/>
+                                <connections>
+                                    <action selector="onFullForm:" destination="hX4-8A-dER" eventType="touchUpInside" id="IUF-B7-cwl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rS2-CS-v30" firstAttribute="centerX" secondItem="Q1m-Ze-04P" secondAttribute="centerX" id="EUD-gZ-cF1"/>
                             <constraint firstItem="rS2-CS-v30" firstAttribute="top" secondItem="QNq-xb-nuB" secondAttribute="bottom" constant="50" id="Wj9-NV-Hd7"/>
+                            <constraint firstItem="La6-uz-2kg" firstAttribute="top" secondItem="rS2-CS-v30" secondAttribute="bottom" constant="8" id="fSH-eW-EPf"/>
+                            <constraint firstItem="La6-uz-2kg" firstAttribute="centerX" secondItem="Q1m-Ze-04P" secondAttribute="centerX" id="soB-W9-Z2z"/>
                         </constraints>
                     </view>
                 </viewController>

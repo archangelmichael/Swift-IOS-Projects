@@ -222,15 +222,29 @@
                                 </constraints>
                                 <state key="normal" title="Simple Form"/>
                                 <connections>
-                                    <action selector="onComplexActionSheet:" destination="maG-Ch-O5o" eventType="touchUpInside" id="7VK-Sp-NLf"/>
                                     <action selector="onSimpleForm:" destination="jNP-q0-63s" eventType="touchUpInside" id="0eZ-r4-NQm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URq-dK-4BX">
+                                <rect key="frame" x="60" y="172" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DDc-q2-HRP"/>
+                                    <constraint firstAttribute="width" constant="200" id="sXB-Jt-SBJ"/>
+                                </constraints>
+                                <state key="normal" title="Full Form"/>
+                                <connections>
+                                    <action selector="onComplexActionSheet:" destination="maG-Ch-O5o" eventType="touchUpInside" id="dlJ-uf-vmR"/>
+                                    <action selector="onFullForm:" destination="jNP-q0-63s" eventType="touchUpInside" id="g1C-AL-inF"/>
+                                    <action selector="onSimpleForm:" destination="jNP-q0-63s" eventType="touchUpInside" id="Hge-0f-4X3"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="URq-dK-4BX" firstAttribute="centerX" secondItem="xct-4B-Xiq" secondAttribute="centerX" id="HKQ-O9-idl"/>
                             <constraint firstItem="dDU-Sr-Mxv" firstAttribute="centerX" secondItem="xct-4B-Xiq" secondAttribute="centerX" id="eGi-bG-zGc"/>
                             <constraint firstItem="dDU-Sr-Mxv" firstAttribute="top" secondItem="SYZ-TW-vmw" secondAttribute="bottom" constant="50" id="huA-Ua-INv"/>
+                            <constraint firstItem="URq-dK-4BX" firstAttribute="top" secondItem="dDU-Sr-Mxv" secondAttribute="bottom" constant="8" id="pbw-Sy-WH7"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserFormViewController" customModule="ActionSheetsWithSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="agePickerView" destination="wif-nL-kh3" id="cDx-76-gji"/>
+                <outlet property="nameTextField" destination="QqM-0p-evN" id="HDa-6e-fg7"/>
+                <outlet property="sexSegmentedControl" destination="MDx-hb-cvh" id="Qe9-pb-FYO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="426"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QqM-0p-evN">
+                    <rect key="frame" x="20" y="8" width="242" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select age range" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9g-Pf-AHZ">
+                    <rect key="frame" x="84.5" y="46" width="151" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wif-nL-kh3">
+                    <rect key="frame" x="20" y="78" width="280" height="216"/>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZE-dg-p4S">
+                    <rect key="frame" x="98" y="302" width="124.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MDx-hb-cvh">
+                    <rect key="frame" x="101.5" y="334" width="117" height="29"/>
+                    <segments>
+                        <segment title="Male"/>
+                        <segment title="Female"/>
+                    </segments>
+                </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz2-XK-xQK">
+                    <rect key="frame" x="270" y="8" width="42" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="xmd-bY-Psk"/>
+                        <constraint firstAttribute="width" constant="42" id="ymK-PP-Ysh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="X"/>
+                    <connections>
+                        <action selector="onClose:" destination="-1" eventType="touchUpInside" id="Lt9-rB-DbK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4t-Vg-Cd5">
+                    <rect key="frame" x="20" y="370" width="280" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Done"/>
+                    <connections>
+                        <action selector="onDone:" destination="-1" eventType="touchUpInside" id="o3R-Gx-EGh"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="p9g-Pf-AHZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2lP-Bg-LCc"/>
+                <constraint firstItem="b4t-Vg-Cd5" firstAttribute="top" secondItem="MDx-hb-cvh" secondAttribute="bottom" constant="8" id="7PP-AF-8lp"/>
+                <constraint firstItem="wif-nL-kh3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="DMw-pX-hvT"/>
+                <constraint firstItem="b4t-Vg-Cd5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DlO-Li-715"/>
+                <constraint firstItem="b4t-Vg-Cd5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Hrg-4m-1gj"/>
+                <constraint firstItem="MDx-hb-cvh" firstAttribute="top" secondItem="sZE-dg-p4S" secondAttribute="bottom" constant="8" id="Jw8-sc-95k"/>
+                <constraint firstItem="QqM-0p-evN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="KD2-m8-08n"/>
+                <constraint firstItem="wif-nL-kh3" firstAttribute="top" secondItem="p9g-Pf-AHZ" secondAttribute="bottom" constant="8" id="KPx-JF-X2l"/>
+                <constraint firstItem="MDx-hb-cvh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LfN-mA-O31"/>
+                <constraint firstAttribute="trailing" secondItem="b4t-Vg-Cd5" secondAttribute="trailing" constant="20" id="NGA-jN-L5j"/>
+                <constraint firstItem="Cz2-XK-xQK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="SrA-mm-1xs"/>
+                <constraint firstItem="QqM-0p-evN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="T8c-oP-1nl"/>
+                <constraint firstAttribute="trailing" secondItem="Cz2-XK-xQK" secondAttribute="trailing" constant="8" id="V2M-kj-EK9"/>
+                <constraint firstItem="p9g-Pf-AHZ" firstAttribute="top" secondItem="QqM-0p-evN" secondAttribute="bottom" constant="8" id="dWI-ol-UET"/>
+                <constraint firstAttribute="trailing" secondItem="wif-nL-kh3" secondAttribute="trailing" constant="20" id="fzB-tl-hEc"/>
+                <constraint firstItem="Cz2-XK-xQK" firstAttribute="leading" secondItem="QqM-0p-evN" secondAttribute="trailing" constant="8" id="hSz-ZG-fVf"/>
+                <constraint firstItem="wif-nL-kh3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="t8V-go-FDf"/>
+                <constraint firstItem="sZE-dg-p4S" firstAttribute="top" secondItem="wif-nL-kh3" secondAttribute="bottom" constant="8" id="toS-AB-wc8"/>
+                <constraint firstItem="sZE-dg-p4S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zB0-Co-BKO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="401" y="149"/>
+        </view>
+    </objects>
+</document>
