@@ -39,6 +39,8 @@ class FormsViewController: UIViewController {
             }
         )
         
+        okAction.enabled = false
+        
         alertController.addAction(okAction)
         
         let closeAction = UIAlertAction(
@@ -51,11 +53,23 @@ class FormsViewController: UIViewController {
         
         alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
             textField.placeholder = "Username"
+            textField.addTarget(
+                self,
+                action: "alertTextFieldDidChange:",
+                forControlEvents:UIControlEvents.EditingChanged)
         }
         
         self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
     }
-
+    
+    func alertTextFieldDidChange(sender : UITextField) {
+        if let alertController : UIAlertController? = self.presentedViewController as? UIAlertController {
+            let textFieldUsername : UITextField? = alertController?.textFields?.first
+            let okAction = alertController?.actions.first
+            let username : String? = textFieldUsername?.text
+            okAction?.enabled = username?.characters.count > 2
+        }
+    }
     /*
     // MARK: - Navigation
 
