@@ -1,0 +1,6 @@
+framework module Pods_MapKitAdvanced {
+  umbrella header "Pods-MapKitAdvanced-umbrella.h"
+
+  export *
+  module * { export * }
+}

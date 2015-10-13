@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ae8-7H-LmN">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Details View Controller-->
+        <scene sceneID="GMh-nL-yvB">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ui2-gs-Ymf" customClass="DetailsViewController" customModule="MapKitAdvanced" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bAd-jv-RjJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cal-GK-VcH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Teg-YV-Xz3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tlp-D4-0jm">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tlp-D4-0jm" firstAttribute="top" secondItem="bAd-jv-RjJ" secondAttribute="bottom" id="WhI-54-7dR"/>
+                            <constraint firstAttribute="trailing" secondItem="tlp-D4-0jm" secondAttribute="trailing" id="jSL-7E-wEo"/>
+                            <constraint firstItem="tlp-D4-0jm" firstAttribute="leading" secondItem="Teg-YV-Xz3" secondAttribute="leading" id="lGd-Qv-imF"/>
+                            <constraint firstItem="Cal-GK-VcH" firstAttribute="top" secondItem="tlp-D4-0jm" secondAttribute="bottom" id="xaG-uf-6C9"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="tlp-D4-0jm" id="347-Qs-poX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Bv-X8-amJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1280" y="305"/>
+        </scene>
+        <!--Map Places-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapKitAdvanced" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eYu-bS-uIK">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eYu-bS-uIK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="OjC-Dw-GiV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eYu-bS-uIK" secondAttribute="trailing" constant="-20" id="ZVP-gf-ns0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eYu-bS-uIK" secondAttribute="bottom" id="ccZ-1N-nUp"/>
+                            <constraint firstItem="eYu-bS-uIK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="vVi-wf-ruR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map Places" id="qKL-Je-hrX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="bSx-ZC-Gey">
+                            <connections>
+                                <action selector="onSettings:" destination="BYZ-38-t0r" id="FLi-nR-Fzs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Fpq-p5-heH">
+                            <connections>
+                                <action selector="onSearch:" destination="BYZ-38-t0r" id="iLe-8b-cyI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="barButtonSettings" destination="bSx-ZC-Gey" id="xgu-kM-XkI"/>
+                        <outlet property="mapView" destination="eYu-bS-uIK" id="umC-Cf-0hf"/>
+                        <segue destination="ui2-gs-Ymf" kind="show" identifier="PinDetails" id="zKl-eB-t50"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821" y="305"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Djg-Pb-Abi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ae8-7H-LmN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fzg-Sc-Svc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MU9-C7-IaP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E3I-yK-hUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="305"/>
+        </scene>
+    </scenes>
+</document>

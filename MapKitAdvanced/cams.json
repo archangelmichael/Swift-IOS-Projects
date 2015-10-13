@@ -1,0 +1,51 @@
+[{
+	"lat" : "23.09675",
+	"lon" : "41.94737",
+	"road" : "E79",
+	"speed" : "60",
+	"nearestTown" : "Blagoevgrad",
+	"comment" : ""
+},{
+	"lat" : "23.0756",
+	"lon" : "42.00780",
+	"road" : "E79",
+	"speed" : "60",
+	"nearestTown" : "Blagoevgrad",
+	"comment" : ""
+},{
+	"lat" : "23.03844",
+	"lon" : "42.11699",
+	"road" : "E79",
+	"speed" : "50",
+	"nearestTown" : "Mursalevo",
+	"comment" : ""
+},{
+	"lat" : "23.09512",
+	"lon" : "42.34970",
+	"road" : "E79",
+	"speed" : "60",
+	"nearestTown" : "Djakovo",
+	"comment" : ""
+},{
+	"lat" : "23.09675",
+	"lon" : "41.94737",
+	"road" : "E79",
+	"speed" : "60",
+	"nearestTown" : "Blagoevgrad",
+	"comment" : ""
+},{
+	"lat" : "23.290786",
+	"lon" : "42.650492",
+	"road" : "Okolovrasten pat",
+	"speed" : "80",
+	"nearestTown" : "Sofia",
+	"comment" : "Shell Petrol Station"
+},{
+	"lat" : "23.290786",
+	"lon" : "42.650492",
+	"road" : "Okolovrasten pat",
+	"speed" : "80",
+	"nearestTown" : "Sofia",
+	"comment" : "Shell Petrol Station"
+}
+]
