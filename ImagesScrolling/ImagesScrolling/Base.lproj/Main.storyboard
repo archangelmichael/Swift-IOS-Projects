@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImagesScrolling" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView hidden="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_bedroom" translatesAutoresizingMaskIntoConstraints="NO" id="n8N-dl-OnC">
+                                <rect key="frame" x="30" y="171" width="260" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="LWF-fR-h1a"/>
+                                    <constraint firstAttribute="width" constant="260" id="eZ7-cb-wBZ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKR-qA-beh">
+                                <rect key="frame" x="16" y="40" width="288" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="uwI-7B-zIE"/>
+                                </constraints>
+                                <state key="normal" title="RESTART"/>
+                                <connections>
+                                    <action selector="onRestart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yyq-il-ClA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33333333329999998" green="0.25490196079999999" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="n8N-dl-OnC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1gs-b5-MKQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="UKR-qA-beh" secondAttribute="leading" id="8KW-oz-7kH"/>
+                            <constraint firstItem="UKR-qA-beh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="XWO-Xp-khs"/>
+                            <constraint firstItem="n8N-dl-OnC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wzx-G2-wHn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UKR-qA-beh" secondAttribute="trailing" id="y8J-Fm-Oeg"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnRestart" destination="UKR-qA-beh" id="4Al-Sv-kCl"/>
+                        <outlet property="ivMain" destination="n8N-dl-OnC" id="Uni-KH-X0e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="338"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="ht7-rj-dIu">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Pfm-sp-A10" customClass="PageViewController" customModule="ImagesScrolling" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0t1-X4-PNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="0.0"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="XY5-QB-1UF">
+            <objects>
+                <viewController storyboardIdentifier="PageContentController" id="9pi-95-bkq" customClass="PageContentViewController" customModule="ImagesScrolling" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Raf-uM-5SB"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ey-Dv-hiW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Ld-uA-xSf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oac-BV-5R0">
+                                <rect key="frame" x="72" y="20" width="176" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="pXD-gu-yWQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gs8-SH-wxA">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="test_bedroom" translatesAutoresizingMaskIntoConstraints="NO" id="eZ3-aL-Fkx">
+                                        <rect key="frame" x="8" y="8" width="1600" height="1067"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eZ3-aL-Fkx" secondAttribute="trailing" constant="8" id="3Eg-9K-gsk"/>
+                                    <constraint firstItem="eZ3-aL-Fkx" firstAttribute="leading" secondItem="gs8-SH-wxA" secondAttribute="leading" constant="8" id="CyT-5A-v9g"/>
+                                    <constraint firstAttribute="bottom" secondItem="eZ3-aL-Fkx" secondAttribute="bottom" constant="8" id="F4F-e6-yl8"/>
+                                    <constraint firstItem="eZ3-aL-Fkx" firstAttribute="top" secondItem="gs8-SH-wxA" secondAttribute="top" constant="8" id="JEY-aH-u7o"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33333333329999998" green="0.25490196079999999" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gs8-SH-wxA" firstAttribute="leading" secondItem="4Ld-uA-xSf" secondAttribute="leadingMargin" constant="-20" id="1H4-RQ-al9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oac-BV-5R0" secondAttribute="trailing" constant="56" id="2Wi-VG-0YV"/>
+                            <constraint firstItem="3ey-Dv-hiW" firstAttribute="top" secondItem="gs8-SH-wxA" secondAttribute="bottom" id="Ei3-Mj-t0r"/>
+                            <constraint firstItem="oac-BV-5R0" firstAttribute="leading" secondItem="4Ld-uA-xSf" secondAttribute="leadingMargin" constant="56" id="Kl1-BD-4j4"/>
+                            <constraint firstItem="gs8-SH-wxA" firstAttribute="top" secondItem="4Ld-uA-xSf" secondAttribute="topMargin" id="QHt-rC-6MD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gs8-SH-wxA" secondAttribute="trailing" constant="-20" id="maE-G9-ZtR"/>
+                            <constraint firstItem="oac-BV-5R0" firstAttribute="top" secondItem="Raf-uM-5SB" secondAttribute="bottom" id="qaP-5i-SKr"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="ivImage" destination="eZ3-aL-Fkx" id="ePe-OY-kAM"/>
+                        <outlet property="lblTitle" destination="oac-BV-5R0" id="dj6-KS-gSb"/>
+                        <outlet property="scrollView" destination="gs8-SH-wxA" id="1QL-qB-xLc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hnp-7T-j6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="736"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="test_bedroom" width="1600" height="1067"/>
+    </resources>
+</document>

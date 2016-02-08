@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Storyboards" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrf-n1-3YT">
+                                <rect key="frame" x="88" y="295" width="198" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="jh8-5g-8GS"/>
+                                    <constraint firstAttribute="width" constant="198" id="kxE-8k-DgF"/>
+                                </constraints>
+                                <state key="normal" title="REGISTER"/>
+                                <connections>
+                                    <segue destination="WA1-Vu-XU1" kind="show" id="ONl-NM-Tz2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odE-FT-T0G">
+                                <rect key="frame" x="88" y="210" width="198" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="198" id="82W-D6-dF8"/>
+                                    <constraint firstAttribute="height" constant="77" id="by8-L7-TPX"/>
+                                </constraints>
+                                <state key="normal" title="LOGIN"/>
+                                <connections>
+                                    <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E8v-LZ-C4p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qrf-n1-3YT" firstAttribute="top" secondItem="odE-FT-T0G" secondAttribute="bottom" constant="8" id="FgS-2P-Cvh"/>
+                            <constraint firstItem="odE-FT-T0G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LLN-kJ-Gm0"/>
+                            <constraint firstItem="qrf-n1-3YT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ksG-ja-V4s"/>
+                            <constraint firstItem="qrf-n1-3YT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nbC-L1-33d"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260.5" y="330.5"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="8i4-zw-jDY">
+            <objects>
+                <viewController storyboardIdentifier="register" id="WA1-Vu-XU1" customClass="RegisterViewController" customModule="Storyboards" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FFr-yE-pwu"/>
+                        <viewControllerLayoutGuide type="bottom" id="w4J-pR-Y61"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FKC-rE-SwH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpK-cq-sC0">
+                                <rect key="frame" x="88" y="295" width="198" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="198" id="0ID-gX-j11"/>
+                                    <constraint firstAttribute="height" constant="77" id="21S-6u-LGU"/>
+                                </constraints>
+                                <state key="normal" title="REGISTER"/>
+                                <connections>
+                                    <action selector="onRegister:" destination="WA1-Vu-XU1" eventType="touchUpInside" id="aBL-Kp-7Tc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lpK-cq-sC0" firstAttribute="centerX" secondItem="FKC-rE-SwH" secondAttribute="centerX" id="aG7-Hd-pO4"/>
+                            <constraint firstItem="lpK-cq-sC0" firstAttribute="centerY" secondItem="FKC-rE-SwH" secondAttribute="centerY" id="xeX-ZS-XYo"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M86-Zi-YV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.5" y="330.5"/>
+        </scene>
+    </scenes>
+</document>
