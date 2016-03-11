@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestSlideTabs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17Q-My-SSz" userLabel="vTop">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kej-SA-dpq" userLabel="btnRight">
+                                        <rect key="frame" x="240" y="20" width="80" height="40"/>
+                                        <connections>
+                                            <action selector="onRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bc6-lo-Al4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vk-Lb-rBd" userLabel="btnLeft">
+                                        <rect key="frame" x="0.0" y="20" width="80" height="40"/>
+                                        <connections>
+                                            <action selector="onLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W1D-gk-IhJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auJ-u4-rIC" userLabel="btnMidLeft">
+                                        <rect key="frame" x="80" y="20" width="80" height="40"/>
+                                        <connections>
+                                            <action selector="onMidLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zq2-Eu-x9Q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6l-Dx-y5G" userLabel="btnMidRight">
+                                        <rect key="frame" x="160" y="20" width="80" height="40"/>
+                                        <connections>
+                                            <action selector="onMidRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gb-ld-K9d"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="L6l-Dx-y5G" firstAttribute="top" secondItem="17Q-My-SSz" secondAttribute="top" constant="20" id="47V-Kq-rE8"/>
+                                    <constraint firstItem="Kej-SA-dpq" firstAttribute="leading" secondItem="L6l-Dx-y5G" secondAttribute="trailing" id="6Bn-aJ-RG6"/>
+                                    <constraint firstItem="auJ-u4-rIC" firstAttribute="leading" secondItem="1vk-Lb-rBd" secondAttribute="trailing" id="9Mc-HL-UMG"/>
+                                    <constraint firstAttribute="bottom" secondItem="1vk-Lb-rBd" secondAttribute="bottom" id="Fw8-Qr-6Q4"/>
+                                    <constraint firstItem="1vk-Lb-rBd" firstAttribute="leading" secondItem="17Q-My-SSz" secondAttribute="leading" id="GgE-4L-VfE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kej-SA-dpq" secondAttribute="trailing" id="IE0-F3-Qk0"/>
+                                    <constraint firstItem="1vk-Lb-rBd" firstAttribute="width" secondItem="17Q-My-SSz" secondAttribute="width" multiplier="0.25" id="IPJ-MJ-5h1"/>
+                                    <constraint firstItem="auJ-u4-rIC" firstAttribute="top" secondItem="17Q-My-SSz" secondAttribute="top" constant="20" id="ONw-NN-W5g"/>
+                                    <constraint firstAttribute="bottom" secondItem="L6l-Dx-y5G" secondAttribute="bottom" id="ZCs-10-Bl8"/>
+                                    <constraint firstAttribute="height" constant="60" id="Zss-lA-Omn"/>
+                                    <constraint firstItem="auJ-u4-rIC" firstAttribute="centerX" secondItem="17Q-My-SSz" secondAttribute="centerX" id="cSU-wy-T3W"/>
+                                    <constraint firstItem="Kej-SA-dpq" firstAttribute="width" secondItem="17Q-My-SSz" secondAttribute="width" multiplier="0.25" id="cXB-Ze-1E8"/>
+                                    <constraint firstAttribute="bottom" secondItem="auJ-u4-rIC" secondAttribute="bottom" id="gm5-aw-rTq"/>
+                                    <constraint firstItem="1vk-Lb-rBd" firstAttribute="top" secondItem="17Q-My-SSz" secondAttribute="top" constant="20" id="iiZ-ji-LsG"/>
+                                    <constraint firstItem="Kej-SA-dpq" firstAttribute="top" secondItem="17Q-My-SSz" secondAttribute="top" constant="20" id="iuG-qI-gHi"/>
+                                    <constraint firstItem="L6l-Dx-y5G" firstAttribute="width" secondItem="17Q-My-SSz" secondAttribute="width" multiplier="0.25" id="loR-Hh-pHH"/>
+                                    <constraint firstItem="auJ-u4-rIC" firstAttribute="width" secondItem="17Q-My-SSz" secondAttribute="width" multiplier="0.25" id="oUu-Z4-H6D"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kej-SA-dpq" secondAttribute="bottom" id="uPs-nf-67u"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cSU-wy-T3W"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIL-mB-eER">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htu-CF-IVs" userLabel="vActiveTab">
+                                <rect key="frame" x="0.0" y="60" width="80" height="4"/>
+                                <color key="backgroundColor" red="0.49019607840000001" green="0.43137254899999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="CQf-Av-7PH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WIL-mB-eER" firstAttribute="top" secondItem="17Q-My-SSz" secondAttribute="bottom" constant="4" id="9RS-mu-wOB"/>
+                            <constraint firstItem="htu-CF-IVs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CL7-Kr-p0Y"/>
+                            <constraint firstAttribute="trailing" secondItem="17Q-My-SSz" secondAttribute="trailing" id="Izy-g1-NvZ"/>
+                            <constraint firstItem="htu-CF-IVs" firstAttribute="width" secondItem="17Q-My-SSz" secondAttribute="width" multiplier="0.25" id="OQR-Mu-ufI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WIL-mB-eER" secondAttribute="bottom" id="QOU-ub-2zf"/>
+                            <constraint firstAttribute="trailing" secondItem="WIL-mB-eER" secondAttribute="trailing" id="T50-ct-6eX"/>
+                            <constraint firstItem="WIL-mB-eER" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hB4-hF-Jrq"/>
+                            <constraint firstItem="17Q-My-SSz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="j7J-Qp-qBL"/>
+                            <constraint firstItem="17Q-My-SSz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="owC-G5-mCe"/>
+                            <constraint firstItem="htu-CF-IVs" firstAttribute="top" secondItem="17Q-My-SSz" secondAttribute="bottom" id="zJz-KF-CcR"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnLeft" destination="1vk-Lb-rBd" id="Xz8-OI-tfp"/>
+                        <outlet property="btnMidLeft" destination="auJ-u4-rIC" id="egA-qN-gSA"/>
+                        <outlet property="btnMidRight" destination="L6l-Dx-y5G" id="8ql-Oz-tbq"/>
+                        <outlet property="btnRight" destination="Kej-SA-dpq" id="qU0-Yt-FlD"/>
+                        <outlet property="cstrActiveTab" destination="CL7-Kr-p0Y" id="UzT-vp-aEl"/>
+                        <outlet property="vActiveTab" destination="htu-CF-IVs" id="xwD-Vb-rlf"/>
+                        <outlet property="vContainer" destination="WIL-mB-eER" id="BeN-Ew-QZY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="243" y="366"/>
+        </scene>
+        <!--Pages View Controller-->
+        <scene sceneID="CZc-9q-9o7">
+            <objects>
+                <pageViewController storyboardIdentifier="pagesVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="zi8-YJ-g1S" customClass="PagesViewController" customModule="TestSlideTabs" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6mW-sv-0it" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="325"/>
+        </scene>
+        <!--Right View Controller-->
+        <scene sceneID="EJq-7q-TtR">
+            <objects>
+                <viewController storyboardIdentifier="rightVC" id="DKM-ec-edM" customClass="RightViewController" customModule="TestSlideTabs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N0Q-fJ-bA1"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Bf-fk-7Ca"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Da-5m-THs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02A-fr-SIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="1270"/>
+        </scene>
+        <!--Left View Controller-->
+        <scene sceneID="mBu-S4-xMk">
+            <objects>
+                <viewController storyboardIdentifier="leftVC" id="zWf-tV-UHC" customClass="LeftViewController" customModule="TestSlideTabs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hJd-Sm-air"/>
+                        <viewControllerLayoutGuide type="bottom" id="PUO-wb-xMr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QqH-lb-WE7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.49019607840000001" green="0.43137254899999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0FN-5M-9TL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="1270"/>
+        </scene>
+        <!--Mid Left View Controller-->
+        <scene sceneID="1UP-6n-sIt">
+            <objects>
+                <viewController storyboardIdentifier="midleftVC" id="ezS-fx-RmG" customClass="MidLeftViewController" customModule="TestSlideTabs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="beS-5V-Hcw"/>
+                        <viewControllerLayoutGuide type="bottom" id="uL4-M3-BhN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jSz-Gq-029">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.019145764799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kw5-Jl-HrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="1924"/>
+        </scene>
+        <!--Mid Right View Controller-->
+        <scene sceneID="gKP-EI-ZmA">
+            <objects>
+                <viewController storyboardIdentifier="midrightVC" id="g4W-VY-Kcp" customClass="MidRightViewController" customModule="TestSlideTabs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dB1-Ik-xeO"/>
+                        <viewControllerLayoutGuide type="bottom" id="RRa-Ct-nUb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sVG-re-odK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0039215686269999999" green="0.78039215689999997" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXw-B8-pou" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="1924"/>
+        </scene>
+    </scenes>
+</document>

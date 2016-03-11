@@ -1,0 +1,10 @@
+PODS:
+  - RKSwipeBetweenViewControllers (0.1.4)
+
+DEPENDENCIES:
+  - RKSwipeBetweenViewControllers
+
+SPEC CHECKSUMS:
+  RKSwipeBetweenViewControllers: 2236038119d6f7eb64ff589eb423fcda80cbe962
+
+COCOAPODS: 0.39.0
