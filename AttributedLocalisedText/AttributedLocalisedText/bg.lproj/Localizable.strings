@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  AttributedLocalisedText
+
+  Created by Radi on 4/5/16.
+  Copyright © 2016 archangel. All rights reserved.
+*/
+
+output = "Резултат";
+input = "Входни данни";
+english = "Английски";
+bulgarian = "Български";

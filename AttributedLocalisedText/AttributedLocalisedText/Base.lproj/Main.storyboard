@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AttributedLocalisedText" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="tLY-Rn-DBa">
+                                <rect key="frame" x="70.5" y="58" width="180" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="c4X-7F-wOL"/>
+                                    <constraint firstAttribute="width" constant="180" id="tgx-gT-hnE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBT-NM-aQf">
+                                <rect key="frame" x="0.0" y="116" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="dA5-Ug-iNh"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="erm-X7-sGX"/>
+                                </connections>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input" textAlignment="center" minimumFontSize="6" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Lfl-rI-3Ds">
+                                <rect key="frame" x="16" y="20" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zPI-n0-NiC"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lfl-rI-3Ds" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ige-zk-pOu"/>
+                            <constraint firstItem="tLY-Rn-DBa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Myq-To-KKs"/>
+                            <constraint firstItem="tLY-Rn-DBa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="53" id="UXI-O7-6bA"/>
+                            <constraint firstItem="tLY-Rn-DBa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-52" id="arr-cE-CxS"/>
+                            <constraint firstItem="tLY-Rn-DBa" firstAttribute="top" secondItem="Lfl-rI-3Ds" secondAttribute="bottom" constant="8" id="hh6-5O-JAM"/>
+                            <constraint firstAttribute="trailing" secondItem="dBT-NM-aQf" secondAttribute="trailing" id="hqZ-PT-0DQ"/>
+                            <constraint firstItem="Lfl-rI-3Ds" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="n4H-7f-0hB"/>
+                            <constraint firstItem="dBT-NM-aQf" firstAttribute="top" secondItem="tLY-Rn-DBa" secondAttribute="bottom" constant="30" id="oB5-ZM-DXY"/>
+                            <constraint firstItem="dBT-NM-aQf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p6R-vb-V14"/>
+                            <constraint firstItem="Lfl-rI-3Ds" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qGS-Uj-pvj"/>
+                            <constraint firstItem="tLY-Rn-DBa" firstAttribute="top" secondItem="Lfl-rI-3Ds" secondAttribute="bottom" constant="8" id="vLc-QE-siS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="UXI-O7-6bA"/>
+                                <exclude reference="arr-cE-CxS"/>
+                                <exclude reference="hh6-5O-JAM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="lblOutput" destination="tLY-Rn-DBa" id="aKi-qK-pxm"/>
+                        <outlet property="tfInput" destination="Lfl-rI-3Ds" id="juw-kb-6uS"/>
+                        <outlet property="vPicker" destination="dBT-NM-aQf" id="f5l-hl-tQV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="325"/>
+        </scene>
+    </scenes>
+</document>

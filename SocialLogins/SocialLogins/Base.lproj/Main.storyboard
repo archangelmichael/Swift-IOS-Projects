@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SocialLogins" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcS-C3-th3" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="20" y="187" width="280" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="C23-HI-KzI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Simple FB Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hh-fv-4Fa">
+                                <rect key="frame" x="20" y="80" width="280" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="Ztu-NC-IQe"/>
+                                    <constraint firstAttribute="height" constant="46" id="u1z-Uz-eqc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ztu-NC-IQe"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNO-na-PyH">
+                                <rect key="frame" x="20" y="134" width="280" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="BaO-7p-O2P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Facebook Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCustomFBLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3a9-Ra-nFB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMR-Is-TJO">
+                                <rect key="frame" x="20" y="187" width="280" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="iAo-RE-Yb1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="lzq-Mm-c0w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Twitter Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTwitterLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pMY-D5-YvV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RcS-C3-th3" firstAttribute="top" secondItem="TNO-na-PyH" secondAttribute="bottom" constant="8" id="8ZI-GY-ATu"/>
+                            <constraint firstItem="6hh-fv-4Fa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="9OS-FL-GBm"/>
+                            <constraint firstItem="RcS-C3-th3" firstAttribute="top" secondItem="TNO-na-PyH" secondAttribute="bottom" constant="8" id="Csy-z6-65M"/>
+                            <constraint firstItem="TNO-na-PyH" firstAttribute="top" secondItem="6hh-fv-4Fa" secondAttribute="bottom" constant="8" id="ESW-l0-oj7"/>
+                            <constraint firstItem="RcS-C3-th3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="F4Q-3G-ldz"/>
+                            <constraint firstItem="6hh-fv-4Fa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Gri-wu-BA7"/>
+                            <constraint firstItem="iMR-Is-TJO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="NJl-SZ-Rja"/>
+                            <constraint firstItem="6hh-fv-4Fa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RIY-gz-f3z"/>
+                            <constraint firstAttribute="trailing" secondItem="iMR-Is-TJO" secondAttribute="trailing" constant="20" id="UxV-0c-Mmb"/>
+                            <constraint firstAttribute="trailing" secondItem="RcS-C3-th3" secondAttribute="trailing" constant="20" id="bTt-Yo-9QD"/>
+                            <constraint firstItem="TNO-na-PyH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="dPK-ns-XSb"/>
+                            <constraint firstAttribute="trailing" secondItem="6hh-fv-4Fa" secondAttribute="trailing" constant="20" id="hRf-oN-jqE"/>
+                            <constraint firstAttribute="trailing" secondItem="TNO-na-PyH" secondAttribute="trailing" constant="20" id="jeh-je-6Z8"/>
+                            <constraint firstItem="iMR-Is-TJO" firstAttribute="top" secondItem="TNO-na-PyH" secondAttribute="bottom" constant="8" id="sQn-FL-K8T"/>
+                            <constraint firstItem="6hh-fv-4Fa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="y7S-ip-YFK"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RIY-gz-f3z"/>
+                                <exclude reference="y7S-ip-YFK"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnCustomFBLogin" destination="TNO-na-PyH" id="dot-Rx-mtx"/>
+                        <outlet property="btnFBLogin" destination="RcS-C3-th3" id="2Ha-b0-yop"/>
+                        <segue destination="VLS-YG-yQr" kind="show" identifier="enterSegue" id="78L-d1-r0n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168" y="310"/>
+        </scene>
+        <!--Logout View Controller-->
+        <scene sceneID="ba4-aX-XSg">
+            <objects>
+                <viewController id="VLS-YG-yQr" customClass="LogoutViewController" customModule="SocialLogins" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="osa-C6-gwk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vkx-Jn-giY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HuA-gT-hMn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJu-2A-kNX">
+                                <rect key="frame" x="20" y="228" width="280" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="XfS-rM-vLZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Custom FB Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCustomFBLogin:" destination="VLS-YG-yQr" eventType="touchUpInside" id="ljQ-jY-dNh"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="TpF-Cx-b3e">
+                                <rect key="frame" x="16" y="20" width="288" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="MPs-lK-dow"/>
+                                </constraints>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvN-9f-dk5" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="20" y="281" width="280" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="bHx-F2-bqK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Simple FB Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TpF-Cx-b3e" firstAttribute="leading" secondItem="HuA-gT-hMn" secondAttribute="leadingMargin" id="6q4-km-OLQ"/>
+                            <constraint firstItem="NvN-9f-dk5" firstAttribute="leading" secondItem="HuA-gT-hMn" secondAttribute="leading" constant="20" id="EoO-Fp-OtN"/>
+                            <constraint firstItem="TpF-Cx-b3e" firstAttribute="trailing" secondItem="HuA-gT-hMn" secondAttribute="trailingMargin" id="OR8-DX-XuM"/>
+                            <constraint firstAttribute="trailing" secondItem="UJu-2A-kNX" secondAttribute="trailing" constant="20" id="Pwi-tS-u44"/>
+                            <constraint firstItem="UJu-2A-kNX" firstAttribute="top" secondItem="TpF-Cx-b3e" secondAttribute="bottom" constant="8" id="ZTG-v4-BAr"/>
+                            <constraint firstAttribute="trailing" secondItem="NvN-9f-dk5" secondAttribute="trailing" constant="20" id="dU4-yM-NzF"/>
+                            <constraint firstItem="NvN-9f-dk5" firstAttribute="top" secondItem="UJu-2A-kNX" secondAttribute="bottom" constant="8" id="rjR-pf-MIt"/>
+                            <constraint firstItem="TpF-Cx-b3e" firstAttribute="top" secondItem="osa-C6-gwk" secondAttribute="bottom" id="wkV-ID-j82"/>
+                            <constraint firstItem="UJu-2A-kNX" firstAttribute="leading" secondItem="HuA-gT-hMn" secondAttribute="leading" constant="20" id="xQj-Fa-6tj"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnCustomFBLogout" destination="UJu-2A-kNX" id="E8V-TS-Bbw"/>
+                        <outlet property="btnFBLogout" destination="NvN-9f-dk5" id="hEg-NR-spN"/>
+                        <outlet property="ivAvatar" destination="TpF-Cx-b3e" id="WhG-O6-xM1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="40Z-ao-YRl" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="310"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="empty" width="300" height="300"/>
+    </resources>
+</document>
