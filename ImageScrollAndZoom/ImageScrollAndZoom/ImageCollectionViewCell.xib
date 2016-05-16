@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageViewCell" id="ywy-2d-RGl" customClass="ImageCollectionViewCell" customModule="PropertyMonster" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="262" height="221"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="262" height="221"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_bedroom" translatesAutoresizingMaskIntoConstraints="NO" id="Jtp-XX-wMu">
+                        <rect key="frame" x="0.0" y="0.0" width="262" height="221"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="Jtp-XX-wMu" firstAttribute="leading" secondItem="ywy-2d-RGl" secondAttribute="leading" id="1ab-y5-a13"/>
+                <constraint firstItem="Jtp-XX-wMu" firstAttribute="top" secondItem="ywy-2d-RGl" secondAttribute="top" id="dO7-H4-NX7"/>
+                <constraint firstAttribute="bottom" secondItem="Jtp-XX-wMu" secondAttribute="bottom" id="dbA-ze-x04"/>
+                <constraint firstAttribute="trailing" secondItem="Jtp-XX-wMu" secondAttribute="trailing" id="g67-Rh-IoJ"/>
+            </constraints>
+            <size key="customSize" width="262" height="221"/>
+            <connections>
+                <outlet property="imagePreview" destination="Jtp-XX-wMu" id="8NW-2V-Wmz"/>
+            </connections>
+            <point key="canvasLocation" x="263" y="282.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="test_bedroom" width="1600" height="1067"/>
+    </resources>
+</document>
