@@ -68,7 +68,8 @@ class FourthViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         pickerView.selectRow((randomNumber(10)), inComponent: 1, animated: true)
         pickerView.selectRow((randomNumber(10)), inComponent: 2, animated: true)
         
-        if(component1[pickerView.selectedRowInComponent(0)] == component2[pickerView.selectedRowInComponent(1)] && component2[pickerView.selectedRowInComponent(1)] == component3[pickerView.selectedRowInComponent(2)]) {
+        if(component1[pickerView.selectedRowInComponent(0)] == component2[pickerView.selectedRowInComponent(1)] &&
+            component2[pickerView.selectedRowInComponent(1)] == component3[pickerView.selectedRowInComponent(2)]) {
             
             //win
             resultLabel.text = "WIN!"

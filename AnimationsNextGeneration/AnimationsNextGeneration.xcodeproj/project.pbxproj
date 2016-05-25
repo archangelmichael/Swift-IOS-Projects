@@ -13,6 +13,12 @@
 		1965F5801CEDF48B003DB4F1 /* GradientAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1965F57F1CEDF48B003DB4F1 /* GradientAnimator.swift */; };
 		197D72DA1CEDF85A00DE9D5E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197D72D91CEDF85A00DE9D5E /* AVFoundation.framework */; };
 		197D72DC1CEDFA8A00DE9D5E /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D72DB1CEDFA8A00DE9D5E /* TabsViewController.swift */; };
+		197D72DE1CF5941100DE9D5E /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D72DD1CF5941100DE9D5E /* FifthViewController.swift */; };
+		197D72E01CF5952100DE9D5E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197D72DF1CF5952100DE9D5E /* QuartzCore.framework */; };
+		197D72E21CF5A37600DE9D5E /* SixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D72E11CF5A37600DE9D5E /* SixViewController.swift */; };
+		197D72E41CF5A38700DE9D5E /* SixChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D72E31CF5A38700DE9D5E /* SixChildViewController.swift */; };
+		197D72E81CF5BCB900DE9D5E /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D72E71CF5BCB900DE9D5E /* CustomSegue.swift */; };
+		197D72EA1CF5C61800DE9D5E /* SevenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D72E91CF5C61800DE9D5E /* SevenTableViewController.swift */; };
 		19FE3E6A1CEDA4F30002180D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE3E691CEDA4F30002180D /* AppDelegate.swift */; };
 		19FE3E6C1CEDA4F30002180D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE3E6B1CEDA4F30002180D /* FirstViewController.swift */; };
 		19FE3E6E1CEDA4F30002180D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE3E6D1CEDA4F30002180D /* SecondViewController.swift */; };
@@ -31,6 +37,12 @@
 		1965F57F1CEDF48B003DB4F1 /* GradientAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientAnimator.swift; sourceTree = "<group>"; };
 		197D72D91CEDF85A00DE9D5E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		197D72DB1CEDFA8A00DE9D5E /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
+		197D72DD1CF5941100DE9D5E /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
+		197D72DF1CF5952100DE9D5E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		197D72E11CF5A37600DE9D5E /* SixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixViewController.swift; sourceTree = "<group>"; };
+		197D72E31CF5A38700DE9D5E /* SixChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixChildViewController.swift; sourceTree = "<group>"; };
+		197D72E71CF5BCB900DE9D5E /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
+		197D72E91CF5C61800DE9D5E /* SevenTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenTableViewController.swift; sourceTree = "<group>"; };
 		19FE3E661CEDA4F30002180D /* AnimationsNextGeneration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationsNextGeneration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19FE3E691CEDA4F30002180D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19FE3E6B1CEDA4F30002180D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197D72E01CF5952100DE9D5E /* QuartzCore.framework in Frameworks */,
 				197D72DA1CEDF85A00DE9D5E /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,9 +69,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		197D72E51CF5A38C00DE9D5E /* Sixth */ = {
+			isa = PBXGroup;
+			children = (
+				197D72E11CF5A37600DE9D5E /* SixViewController.swift */,
+				197D72E31CF5A38700DE9D5E /* SixChildViewController.swift */,
+				197D72E71CF5BCB900DE9D5E /* CustomSegue.swift */,
+			);
+			name = Sixth;
+			sourceTree = "<group>";
+		};
+		197D72E61CF5A39800DE9D5E /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				19FE3E7F1CEDCD5F0002180D /* ThirdViewController.swift */,
+				19FE3E871CEDEDBB0002180D /* LoginViewController.swift */,
+			);
+			name = Third;
+			sourceTree = "<group>";
+		};
 		19FE3E5D1CEDA4F30002180D = {
 			isa = PBXGroup;
 			children = (
+				197D72DF1CF5952100DE9D5E /* QuartzCore.framework */,
 				197D72D91CEDF85A00DE9D5E /* AVFoundation.framework */,
 				19FE3E681CEDA4F30002180D /* AnimationsNextGeneration */,
 				19FE3E671CEDA4F30002180D /* Products */,
@@ -90,12 +123,14 @@
 		19FE3E811CEDCD680002180D /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				197D72DB1CEDFA8A00DE9D5E /* TabsViewController.swift */,
 				19FE3E6B1CEDA4F30002180D /* FirstViewController.swift */,
 				19FE3E6D1CEDA4F30002180D /* SecondViewController.swift */,
-				19FE3E7F1CEDCD5F0002180D /* ThirdViewController.swift */,
-				19FE3E871CEDEDBB0002180D /* LoginViewController.swift */,
+				197D72E61CF5A39800DE9D5E /* Third */,
 				1965F5791CEDF34A003DB4F1 /* FourthViewController.swift */,
-				197D72DB1CEDFA8A00DE9D5E /* TabsViewController.swift */,
+				197D72DD1CF5941100DE9D5E /* FifthViewController.swift */,
+				197D72E51CF5A38C00DE9D5E /* Sixth */,
+				197D72E91CF5C61800DE9D5E /* SevenTableViewController.swift */,
 			);
 			name = Tabs;
 			sourceTree = "<group>";
@@ -185,11 +220,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197D72DE1CF5941100DE9D5E /* FifthViewController.swift in Sources */,
 				19FE3E881CEDEDBB0002180D /* LoginViewController.swift in Sources */,
+				197D72E41CF5A38700DE9D5E /* SixChildViewController.swift in Sources */,
 				19FE3E6E1CEDA4F30002180D /* SecondViewController.swift in Sources */,
 				1965F5801CEDF48B003DB4F1 /* GradientAnimator.swift in Sources */,
+				197D72E21CF5A37600DE9D5E /* SixViewController.swift in Sources */,
 				19FE3E6A1CEDA4F30002180D /* AppDelegate.swift in Sources */,
+				197D72E81CF5BCB900DE9D5E /* CustomSegue.swift in Sources */,
 				1965F57A1CEDF34A003DB4F1 /* FourthViewController.swift in Sources */,
+				197D72EA1CF5C61800DE9D5E /* SevenTableViewController.swift in Sources */,
 				19FE3E801CEDCD5F0002180D /* ThirdViewController.swift in Sources */,
 				19FE3E6C1CEDA4F30002180D /* FirstViewController.swift in Sources */,
 				19FE3E7E1CEDB0C80002180D /* DataService.swift in Sources */,

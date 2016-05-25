@@ -16,8 +16,8 @@ class GradientAnimator: UIView {
         let gradientLayer = CAGradientLayer()
         
         // configure the gradient here
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
         
         let colors = [
             
