@@ -1,0 +1,10 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'GooglePlaces' do
+
+pod 'GoogleMaps'
+pod 'iPhone-AR-Toolkit'
+
+end
+

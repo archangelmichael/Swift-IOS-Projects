@@ -1,0 +1,13 @@
+PODS:
+  - GoogleMaps (1.13.2)
+  - iPhone-AR-Toolkit (0.0.1)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - iPhone-AR-Toolkit
+
+SPEC CHECKSUMS:
+  GoogleMaps: b20a103ff307f58392e603cf142e59d7e30374c1
+  iPhone-AR-Toolkit: c371617404fa2fdc70b9cd165e191140e649e5ae
+
+COCOAPODS: 0.39.0
