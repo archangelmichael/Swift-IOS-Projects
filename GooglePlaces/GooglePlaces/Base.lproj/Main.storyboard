@@ -117,7 +117,18 @@
                                 <state key="highlighted" image="near_me_filled_50"/>
                                 <connections>
                                     <action selector="getCurrentPlace:" destination="BYZ-38-t0r" eventType="touchUpInside" id="874-uc-3fz"/>
-                                    <action selector="getNearbyPlaces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dcs-uf-YFx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epE-aG-xqr">
+                                <rect key="frame" x="20" y="460" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="5oJ-1m-4N8"/>
+                                    <constraint firstAttribute="height" constant="40" id="oe2-iy-WuW"/>
+                                </constraints>
+                                <state key="normal" image="enter_50"/>
+                                <state key="highlighted" image="enter_full_50"/>
+                                <connections>
+                                    <action selector="onHDAugmentedReality:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eaz-pT-B0Z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L7-xz-Uqv">
@@ -137,6 +148,7 @@
                         <constraints>
                             <constraint firstItem="NUd-sn-ldK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2sC-jT-nZa"/>
                             <constraint firstItem="3L7-xz-Uqv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5CL-vL-zq4"/>
+                            <constraint firstItem="epE-aG-xqr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="9FM-PW-ffG"/>
                             <constraint firstItem="NUd-sn-ldK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BO0-C9-XsH"/>
                             <constraint firstAttribute="trailing" secondItem="4qo-AL-ikD" secondAttribute="trailing" id="Clf-CJ-0A5"/>
                             <constraint firstItem="4Q5-nf-2vp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CsV-sd-de3"/>
@@ -151,6 +163,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3L7-xz-Uqv" secondAttribute="bottom" constant="20" id="e0Y-Xd-Zxj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ljn-PE-c13" secondAttribute="bottom" constant="20" id="gZF-by-Uib"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BaS-bf-T0Z" secondAttribute="bottom" constant="20" id="n36-Px-0vk"/>
+                            <constraint firstItem="BaS-bf-T0Z" firstAttribute="top" secondItem="epE-aG-xqr" secondAttribute="bottom" constant="8" id="s0N-70-znX"/>
                             <constraint firstAttribute="trailing" secondItem="NUd-sn-ldK" secondAttribute="trailing" id="zNq-eG-449"/>
                         </constraints>
                         <variation key="default">
@@ -179,6 +192,8 @@
         <image name="camera_full_50" width="50" height="50"/>
         <image name="close_50" width="50" height="50"/>
         <image name="close_full_50" width="50" height="50"/>
+        <image name="enter_50" width="50" height="50"/>
+        <image name="enter_full_50" width="50" height="50"/>
         <image name="map_marker_50" width="50" height="50"/>
         <image name="map_marker_full_50" width="50" height="50"/>
         <image name="near_me_50" width="50" height="50"/>

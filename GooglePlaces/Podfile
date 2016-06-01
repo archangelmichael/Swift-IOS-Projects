@@ -6,5 +6,6 @@ target 'GooglePlaces' do
 pod 'GoogleMaps'
 pod 'iPhone-AR-Toolkit'
 
+pod 'HDAugmentedReality', :git => 'https://github.com/DanijelHuis/HDAugmentedReality.git'
 end
 

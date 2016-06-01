@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		19CF38DE1CFECB4600EEB8F1 /* CameraARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CF38DD1CFECB4600EEB8F1 /* CameraARViewController.swift */; };
 		19CF38E01CFED46A00EEB8F1 /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CF38DF1CFED46A00EEB8F1 /* MarkerView.swift */; };
+		19CF38E21CFF09FD00EEB8F1 /* HDARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CF38E11CFF09FD00EEB8F1 /* HDARView.swift */; };
+		19CF38E41CFF0A7F00EEB8F1 /* HDARAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CF38E31CFF0A7F00EEB8F1 /* HDARAnnotation.swift */; };
 		19F2AF0C1CFDB58D00B44C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F2AF0B1CFDB58D00B44C37 /* AppDelegate.swift */; };
 		19F2AF0E1CFDB58D00B44C37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F2AF0D1CFDB58D00B44C37 /* ViewController.swift */; };
 		19F2AF111CFDB58D00B44C37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F2AF0F1CFDB58D00B44C37 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		19CF38DD1CFECB4600EEB8F1 /* CameraARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraARViewController.swift; sourceTree = "<group>"; };
 		19CF38DF1CFED46A00EEB8F1 /* MarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
+		19CF38E11CFF09FD00EEB8F1 /* HDARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDARView.swift; sourceTree = "<group>"; };
+		19CF38E31CFF0A7F00EEB8F1 /* HDARAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDARAnnotation.swift; sourceTree = "<group>"; };
 		19F2AF081CFDB58D00B44C37 /* GooglePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GooglePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F2AF0B1CFDB58D00B44C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19F2AF0D1CFDB58D00B44C37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				19F2AF251CFDC91100B44C37 /* PlaceAnnotation.swift */,
+				19CF38E31CFF0A7F00EEB8F1 /* HDARAnnotation.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				19CF38DF1CFED46A00EEB8F1 /* MarkerView.swift */,
+				19CF38E11CFF09FD00EEB8F1 /* HDARView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 				19CF38DE1CFECB4600EEB8F1 /* CameraARViewController.swift in Sources */,
 				19CF38E01CFED46A00EEB8F1 /* MarkerView.swift in Sources */,
 				19F2AF261CFDC91100B44C37 /* PlaceAnnotation.swift in Sources */,
+				19CF38E41CFF0A7F00EEB8F1 /* HDARAnnotation.swift in Sources */,
+				19CF38E21CFF09FD00EEB8F1 /* HDARView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

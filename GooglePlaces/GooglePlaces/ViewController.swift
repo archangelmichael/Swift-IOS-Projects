@@ -13,6 +13,8 @@ import CoreLocation
 
 import iPhone_AR_Toolkit
 
+import HDAugmentedReality
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var mvMap: MKMapView!
@@ -30,6 +32,7 @@ class ViewController: UIViewController {
     let placesAPIServerKey : String = "AIzaSyBDIxVrAidC0ppxUsBOe9h-4zVWr5udj14"
     let minSpan : MKCoordinateSpan = MKCoordinateSpanMake(0.02, 0.02)
     var locations : [PlaceAnnotation] = []
+    var hdarAnnotations : [HDARAnnotation] = []
     
     var placesClient: GMSPlacesClient?
     var placePicker: GMSPlacePicker?
@@ -44,11 +47,11 @@ class ViewController: UIViewController {
         self.locationManager.delegate = self
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.startUpdatingLocation()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.locationManager.startUpdatingLocation()
     }
     
     // Get place for current location
@@ -110,6 +113,7 @@ class ViewController: UIViewController {
                 else {
                     var json: NSDictionary!
                     self.locations = []
+                    self.hdarAnnotations = []
                     do {
                         json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? NSDictionary
                         if let results = json["results"] as? [NSDictionary] {
@@ -131,6 +135,11 @@ class ViewController: UIViewController {
                                                                  discipline: placeID,
                                                                  coordinate: CLLocationCoordinate2DMake(lat, lon))
                                 self.locations.append(annotation)
+                                
+                                let arAnnotation = HDARAnnotation()
+                                arAnnotation.title = name
+                                arAnnotation.location = CLLocation(latitude: lat, longitude: lon)
+                                self.hdarAnnotations.append(arAnnotation)
                             }
                         }
                     }
@@ -149,12 +158,60 @@ class ViewController: UIViewController {
         }
     }
     
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destinationVC = segue.destinationViewController as? CameraARViewController {
             destinationVC.userLocation = self.mvMap.userLocation
             destinationVC.locations = self.locations
             destinationVC.delegate = self
         }
+    }
+}
+
+extension ViewController : ARDataSource {
+    @IBAction func onHDAugmentedReality(sender: AnyObject) {
+        // Check if device has hardware needed for augmented reality
+        let result = ARViewController.createCaptureSession()
+        if result.error != nil
+        {
+            let message = result.error?.userInfo["description"] as? String
+            let alertVC = UIAlertController(title: "AR not supported",
+                                            message: message,
+                                            preferredStyle: UIAlertControllerStyle.Alert)
+            let alertClose = UIAlertAction(title: "OK",
+                                           style: UIAlertActionStyle.Default,
+                                           handler: nil)
+            alertVC.addAction(alertClose)
+            self.presentViewController(alertVC, animated: true, completion: nil)
+            return
+        }
+        
+        self.locationManager.stopUpdatingLocation()
+        
+        let arViewController = ARViewController()
+        arViewController.debugEnabled = false
+        arViewController.dataSource = self
+        arViewController.maxDistance = 0
+        arViewController.maxVisibleAnnotations = 100
+        arViewController.maxVerticalLevel = 5
+        arViewController.trackingManager.userDistanceFilter = 25
+        arViewController.trackingManager.reloadDistanceFilter = 75
+        arViewController.closeButtonImage = UIImage(named: "close_50")
+        
+        
+        arViewController.setAnnotations(self.hdarAnnotations)
+        self.presentViewController(arViewController,
+                                   animated: true,
+                                   completion: nil)
+    }
+    
+    func ar(arViewController: ARViewController,
+            viewForAnnotation: ARAnnotation) -> ARAnnotationView {
+        // Annotation views should be lightweight views, try to avoid xibs and autolayout all together.
+        let annotationView = HDARView()
+        annotationView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+        annotationView.frame = CGRect(x: 0, y: 0, width: 150, height: 50)
+        return annotationView;
     }
 }
 

@@ -1,13 +1,25 @@
 PODS:
   - GoogleMaps (1.13.2)
+  - HDAugmentedReality (1.0.0)
   - iPhone-AR-Toolkit (0.0.1)
 
 DEPENDENCIES:
   - GoogleMaps
+  - HDAugmentedReality (from `https://github.com/DanijelHuis/HDAugmentedReality.git`)
   - iPhone-AR-Toolkit
+
+EXTERNAL SOURCES:
+  HDAugmentedReality:
+    :git: https://github.com/DanijelHuis/HDAugmentedReality.git
+
+CHECKOUT OPTIONS:
+  HDAugmentedReality:
+    :commit: 608e002873869b3d6f06c98abd89d224e971c6d8
+    :git: https://github.com/DanijelHuis/HDAugmentedReality.git
 
 SPEC CHECKSUMS:
   GoogleMaps: b20a103ff307f58392e603cf142e59d7e30374c1
+  HDAugmentedReality: 62d1d893704ee6d07233f70daab1fe74ec97cf92
   iPhone-AR-Toolkit: c371617404fa2fdc70b9cd165e191140e649e5ae
 
 COCOAPODS: 0.39.0
