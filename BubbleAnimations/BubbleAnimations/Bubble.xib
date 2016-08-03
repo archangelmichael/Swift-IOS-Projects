@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Bubble" customModule="BubbleAnimations" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ITSM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QXv-8A-xds">
+                    <rect key="frame" x="8" y="4" width="34" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ssc-D8-CD3">
+                    <rect key="frame" x="8" y="24" width="34" height="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.81176470590000005" green="0.0" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="ssc-D8-CD3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ARB-4Q-gyQ"/>
+                <constraint firstItem="ssc-D8-CD3" firstAttribute="top" secondItem="QXv-8A-xds" secondAttribute="bottom" id="CPY-cm-baV"/>
+                <constraint firstItem="QXv-8A-xds" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="CVH-pj-ITK"/>
+                <constraint firstAttribute="trailing" secondItem="ssc-D8-CD3" secondAttribute="trailing" constant="8" id="CqL-OI-ina"/>
+                <constraint firstAttribute="bottom" secondItem="ssc-D8-CD3" secondAttribute="bottom" constant="8" id="DPG-pF-6GM"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ssc-D8-CD3" secondAttribute="bottom" constant="4" id="Gzi-iG-md3"/>
+                <constraint firstItem="ssc-D8-CD3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="OdJ-aB-jbp"/>
+                <constraint firstItem="ssc-D8-CD3" firstAttribute="top" secondItem="QXv-8A-xds" secondAttribute="bottom" id="eky-Z3-Eac"/>
+                <constraint firstAttribute="trailing" secondItem="QXv-8A-xds" secondAttribute="trailing" constant="8" id="hGM-LG-c5O"/>
+                <constraint firstItem="ssc-D8-CD3" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="o7h-un-28p"/>
+                <constraint firstItem="ssc-D8-CD3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uWD-Go-CqN"/>
+                <constraint firstItem="QXv-8A-xds" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="w5c-h9-LHK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="CPY-cm-baV"/>
+                    <exclude reference="DPG-pF-6GM"/>
+                    <exclude reference="o7h-un-28p"/>
+                    <exclude reference="uWD-Go-CqN"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="lblCount" destination="ssc-D8-CD3" id="zt0-w1-Jbk"/>
+                <outlet property="lblTitle" destination="QXv-8A-xds" id="Y5j-9v-6Jy"/>
+            </connections>
+            <point key="canvasLocation" x="145" y="213"/>
+        </view>
+    </objects>
+</document>
