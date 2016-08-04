@@ -18,15 +18,19 @@ class ViewController: UIViewController {
     var bubbles: Array<Bubble> = []
     
     let animationDuration = 0.7
-    let bubbleOffset : CGFloat = 20.0
+
+    let sideOffset : CGFloat = 20.0 // Range from bubbles to outside views
+    let bubbleOffset : CGFloat = 10.0 // Range between 2 neighbouring bubbles
+    
+    var centerCoordinate : CGPoint = CGPointMake(0, 0) // The coordinates of the center bubble
+    var centerRadius : CGFloat = 50.0 // The diameter of the center bubble
+    var currentCenterOffset : CGFloat = 100.0 // Distance between center coordinate and bubble center
     
     var numberOfBubbles : Int = 6
     
-    let maxBubbleSize : CGFloat = 90.0
-    let minBubbleSize : CGFloat = 60.0
-    var bubbleSize : CGFloat = 60.0
-    
-    var radius : CGFloat = 100.0
+    let maxBubbleRadius : CGFloat = 50.0
+    let minBubbleRadius : CGFloat = 30.0
+    var currentBubbleRadius : CGFloat = 40.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +41,32 @@ class ViewController: UIViewController {
         self.stepper.value = Double(self.numberOfBubbles)
         self.resetBubblesCounter()
         
-        self.btnBubbles.layer.cornerRadius = self.btnBubbles.frame.size.width/2
+        self.centerRadius = self.btnBubbles.frame.size.width/2
+        self.centerCoordinate = CGPointMake(self.btnBubbles.frame.origin.x + self.centerRadius,
+                                            self.btnBubbles.frame.origin.y + self.centerRadius)
+        
+        self.btnBubbles.layer.cornerRadius = self.centerRadius
         self.btnBubbles.clipsToBounds = true
         
         self.clearBubbles()
-        self.expand = false
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.centerCoordinate = CGPointMake(self.btnBubbles.frame.origin.x + self.centerRadius,
+                                            self.btnBubbles.frame.origin.y + self.centerRadius)
         self.calculateMaxSize()
         self.loadBubbles(self.stepper.value)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(orientationChanged(_:)),
+                                                         name: UIDeviceOrientationDidChangeNotification,
+                                                         object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: UIDeviceOrientationDidChangeNotification,
+                                                            object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,10 +86,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onAddRemoveBubble(stepper: UIStepper) {
-        self.loadBubbles(stepper.value)
         self.numberOfBubbles = Int(stepper.value)
         self.resetBubblesCounter()
-        self.expand = false
+        self.loadBubbles(stepper.value)
     }
     
     func resetBubblesCounter() -> Void {
@@ -78,39 +96,88 @@ class ViewController: UIViewController {
     }
     
     func calculateMaxSize() {
-        let viewSize : CGSize = self.view.frame.size
-        let centerSize : CGSize = self.btnBubbles.frame.size
-        let centerOrigin : CGPoint = self.btnBubbles.frame.origin
+        let viewSize : CGSize = self.view.bounds.size
         
-        let topRange = centerOrigin.y
-        let leftRange = centerOrigin.x
-        let bottomRange = viewSize.height - centerOrigin.y - centerSize.height
-        let rightRange = viewSize.width - centerOrigin.x - centerSize.width
-        let ranges : Array<CGFloat> = [topRange, leftRange, bottomRange, rightRange]
-        let minRange = ranges.minElement()!
+        let maxTopRadius = self.centerCoordinate.y - self.sideOffset
+        let maxLeftRadius = self.centerCoordinate.x - self.sideOffset
+        let maxBottomRadius = viewSize.height - self.centerCoordinate.y - self.sideOffset
+        let maxRightRadius = viewSize.width - self.centerCoordinate.x - self.sideOffset // Should be equal to maxLeftRadius
         
-        if minRange >= self.bubbleOffset * 2 + self.maxBubbleSize {
-            self.bubbleSize = self.maxBubbleSize
-            self.radius = centerSize.width/2 + self.bubbleSize/2 + self.bubbleOffset
+        let allMaxRadius : Array<CGFloat> = [maxTopRadius, maxLeftRadius, maxBottomRadius, maxRightRadius]
+        let minOutsideRadius = allMaxRadius.minElement()! // The radius to fit all bubbles in with side offset
+        
+        if minOutsideRadius < self.centerRadius + self.minBubbleRadius * 2 {
+            // Allowed radius is smaller than the smallest bubble possible
+            self.currentBubbleRadius = self.minBubbleRadius
+            self.currentCenterOffset = self.centerRadius + self.currentBubbleRadius
         }
-        else if minRange < self.bubbleOffset * 2 + self.maxBubbleSize &&
-            minRange >= self.bubbleOffset * 2 + self.minBubbleSize {
-            self.bubbleSize = minRange - self.bubbleOffset * 2
-            self.radius = centerSize.width/2 + self.bubbleSize/2 + self.bubbleOffset
+        else if minOutsideRadius >= self.centerRadius + self.maxBubbleRadius * 2 {
+            // Allowed radius is bigger than the biggest bubble possible
+            self.currentBubbleRadius = self.maxBubbleRadius
+            self.currentCenterOffset = self.centerRadius + self.currentBubbleRadius
+            self.optimizeBubbleSizeForNumberOfBubbles(self.currentBubbleRadius, bubblesCount: self.numberOfBubbles)
+        }
+        else if minOutsideRadius < self.centerRadius + self.currentBubbleRadius * 2 {
+            // Allowed radius is smaller than current radius -> reduce bubbles size
+            var currentRadius = self.currentBubbleRadius
+            while minOutsideRadius < self.centerRadius + currentRadius * 2 {
+                currentRadius = currentRadius - 1.0
+            }
+            
+            self.currentBubbleRadius = currentRadius
+            self.currentCenterOffset = self.centerRadius + self.currentBubbleRadius
+            self.optimizeBubbleSizeForNumberOfBubbles(currentRadius, bubblesCount: self.numberOfBubbles)
         }
         else {
-            self.bubbleSize = self.minBubbleSize
-            self.radius = centerSize.width/2 + self.bubbleSize/2 + self.bubbleOffset/2
+            // Allowed radius is bigger than current radius -> increase bubbles size
+            var currentRadius = self.currentBubbleRadius
+            while minOutsideRadius > self.centerRadius + currentRadius * 2 {
+                currentRadius = currentRadius + 1.0
+            }
+            
+            self.currentBubbleRadius = currentRadius
+            self.currentCenterOffset = self.centerRadius + self.currentBubbleRadius
+            self.optimizeBubbleSizeForNumberOfBubbles(currentRadius, bubblesCount: self.numberOfBubbles)
+        }
+    }
+    
+    func optimizeBubbleSizeForNumberOfBubbles(radiusAllowed: CGFloat, bubblesCount: Int) -> Void {
+        let deviation = 360.0 / Double(bubblesCount) * M_PI / 180
+        let cosDeviation : CGFloat = CGFloat(1 - cos(deviation))
+        
+        var currentRadius = radiusAllowed
+        var distanceBetween2Centers = sqrt(2 * self.currentCenterOffset * self.currentCenterOffset * cosDeviation)
+        var actualCenterRange = radiusAllowed * 2 + self.bubbleOffset
+        while distanceBetween2Centers < actualCenterRange {
+            if currentRadius < self.minBubbleRadius {
+                currentRadius = self.minBubbleRadius
+                break;
+            }
+            
+            currentRadius = currentRadius - 1.0
+            distanceBetween2Centers = sqrt(2 * (self.centerRadius + currentRadius) * (self.centerRadius + currentRadius) * cosDeviation)
+            actualCenterRange = currentRadius * 2 + self.bubbleOffset
+        }
+        
+        if (currentRadius != radiusAllowed) {
+            self.currentBubbleRadius = currentRadius
+            self.currentCenterOffset = self.centerRadius + self.currentBubbleRadius
         }
     }
     
     func loadBubbles(count: Double) -> Void {
+        self.calculateMaxSize()
         self.clearBubbles()
+        self.expand = false
         
         let bubblesCount = Int(count)
-        let bubbleCenterFrame = CGRectMake(self.btnBubbles.frame.origin.x + self.btnBubbles.frame.size.width/2 - self.bubbleSize/2,
-                                           self.btnBubbles.frame.origin.y + self.btnBubbles.frame.size.height/2 - self.bubbleSize/2,
-                                           self.bubbleSize, self.bubbleSize)
+        let bubbleCenterFrame = CGRectMake(self.centerCoordinate.x - self.currentBubbleRadius,
+                                           self.centerCoordinate.y - self.currentBubbleRadius,
+                                           self.currentBubbleRadius * 2,
+                                           self.currentBubbleRadius * 2)
+            
+            
+            
         
         for _ in 0...bubblesCount - 1 {
             let bubble : Bubble = Bubble.instanceFromNib(bubbleCenterFrame,
@@ -135,28 +202,47 @@ class ViewController: UIViewController {
         let startAngle : CGFloat = -180.0
         let deviataionAngle : CGFloat = 360.0 / CGFloat(self.numberOfBubbles)
         
-        UIView.animateWithDuration(animationDuration) {
-            for index : Int in 0...self.bubbles.count - 1 {
-                let bubble = self.bubbles[index]
-                let currentDeviationAngle : CGFloat = CGFloat(index) * deviataionAngle
-                let dx : CGFloat = self.radius * cos(startAngle + currentDeviationAngle * CGFloat(M_PI/180))
-                let dy : CGFloat = self.radius * sin(startAngle + currentDeviationAngle * CGFloat(M_PI/180))
+        UIView.animateWithDuration(animationDuration,
+                                   animations:
+            {
+                for index : Int in 0...self.bubbles.count - 1 {
+                    let bubble = self.bubbles[index]
+                    let currentDeviationAngle : CGFloat = CGFloat(index) * deviataionAngle
+                    let dx : CGFloat = self.currentCenterOffset * cos(startAngle + currentDeviationAngle * CGFloat(M_PI/180))
+                    let dy : CGFloat = self.currentCenterOffset * sin(startAngle + currentDeviationAngle * CGFloat(M_PI/180))
+                    
+                    bubble.center = CGPointMake(centerPoint.x + dx,
+                        centerPoint.y + dy)
+                }
                 
-                bubble.center = CGPointMake(centerPoint.x + dx,
-                                            centerPoint.y + dy)
-            }
-        }
+                self.btnBubbles.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5)
+            },
+                                   completion:
+            {
+                complete in
+                self.btnBubbles.setTitle("X", forState: UIControlState.Normal)
+        })
     }
     
     func hideBubbles() -> Void {
         let centerPoint = self.btnBubbles.center
-        UIView.animateWithDuration(animationDuration) {
-            for index : Int in 0...self.bubbles.count - 1 {
-                let bubble = self.bubbles[index]
-                bubble.center = CGPointMake(centerPoint.x,
-                                            centerPoint.y)
-            }
-        }
+        
+        UIView.animateWithDuration(animationDuration,
+                                   animations:
+            {
+                for index : Int in 0...self.bubbles.count - 1 {
+                    let bubble = self.bubbles[index]
+                    bubble.center = CGPointMake(centerPoint.x,
+                        centerPoint.y)
+                }
+                
+                self.btnBubbles.transform = CGAffineTransformIdentity
+            },
+                                   completion:
+            {
+                complete in
+                self.btnBubbles.setTitle("BUBBLES", forState: UIControlState.Normal)
+        })
     }
     
     func getRandomNumber() -> UInt {
@@ -168,6 +254,13 @@ class ViewController: UIViewController {
         let randomIndex = Int(arc4random_uniform(UInt32(array.count)))
         return array[randomIndex]
     }
-
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        self.clearBubbles()
+    }
+    
+    func orientationChanged (notification: NSNotification) {
+        self.loadBubbles(self.stepper.value)
+    }
 }
 
