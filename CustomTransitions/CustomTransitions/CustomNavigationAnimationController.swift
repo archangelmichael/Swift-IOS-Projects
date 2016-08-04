@@ -9,15 +9,20 @@
 import UIKit
 
 class CustomNavigationAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
-    var reverse: Bool = false
+    var reverse : Bool = false
+    var options : AnimationData? = nil
     weak var transitionContext: UIViewControllerContextTransitioning?
+    
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.7
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        if transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!.isKindOfClass(ViewController) {
+        if transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!.isKindOfClass(ViewController) &&
+            !reverse &&
+            AnimationsManager.sharedManager.animationData != nil {
+            self.options = AnimationsManager.sharedManager.animationData!
             // Show by revealing from center of the screen
             self.circleTransitionWithFill(transitionContext)
         }
@@ -34,81 +39,65 @@ class CustomNavigationAnimationController: NSObject, UIViewControllerAnimatedTra
         self.transitionContext = transitionContext
         let containerView = transitionContext.containerView()
         
-        let direction: CGFloat = reverse ? -1 : 1
-        if direction == 1 { // Show new VC
-            var startView : UIView
-            // let fromVC : UIViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-            let toVC : UIViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-            
-            startView = UIView(frame:  CGRectMake(toVC.view.frame.size.width/2, toVC.view.frame.size.height/2, 0, 0))
-            containerView!.addSubview(toVC.view)
-            
-            let circleMaskPathInitial = UIBezierPath(ovalInRect: startView.frame)
-            let radius = toVC.view.bounds.height > toVC.view.bounds.width ? 2 * toVC.view.bounds.height : 2 * toVC.view.bounds.width
-            let circleMaskPathFinal = UIBezierPath(ovalInRect: CGRectInset(startView.frame, -radius, -radius))
-            
-            let maskLayer = CAShapeLayer()
-            maskLayer.path = circleMaskPathFinal.CGPath
-            toVC.view.layer.mask = maskLayer
-            
-            let maskLayerAnimation = CABasicAnimation(keyPath: "path")
-            maskLayerAnimation.fromValue = circleMaskPathInitial.CGPath
-            maskLayerAnimation.toValue = circleMaskPathFinal.CGPath
-            maskLayerAnimation.duration = self.transitionDuration(transitionContext)
-            maskLayerAnimation.delegate = self
-            maskLayer.addAnimation(maskLayerAnimation, forKey: "path")
-        }
-        else { // Go back from VC
-            var startView : UIView
-            let fromVC : UIViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-            let toVC : UIViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-            
-            startView = UIView(frame: CGRectMake(fromVC.view.frame.size.width/2, fromVC.view.frame.size.height/2, 0, 0))
-            containerView!.addSubview(toVC.view)
-            containerView!.sendSubviewToBack(toVC.view)
-            
-            let radius = fromVC.view.bounds.height > fromVC.view.bounds.width ? 2 * fromVC.view.bounds.height : 2 * fromVC.view.bounds.width
-            let circleMaskPathInitial = UIBezierPath(ovalInRect: CGRectInset(startView.frame, -radius, -radius))
-            let circleMaskPathFinal = UIBezierPath(ovalInRect: startView.frame)
-            
-            let maskLayer = CAShapeLayer()
-            maskLayer.path = circleMaskPathFinal.CGPath
-            fromVC.view.layer.mask = maskLayer
-            
-            let maskLayerAnimation = CABasicAnimation(keyPath: "path")
-            maskLayerAnimation.fromValue = circleMaskPathInitial.CGPath
-            maskLayerAnimation.toValue = circleMaskPathFinal.CGPath
-            maskLayerAnimation.duration = self.transitionDuration(transitionContext)
-            maskLayerAnimation.delegate = self
-            maskLayer.addAnimation(maskLayerAnimation, forKey: "path")
-        }
+        var startView : UIView
+        let fromVC : UIViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        let toVC : UIViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        
+        let splashView = UIView(frame: options.frame)
+        splashView.backgroundColor = options.color
+        splashView.layer.cornerRadius = splashView.frame.size.width/2
+        splashView.layer.borderWidth = 2.0
+        splashView.layer.borderColor = UIColor.whiteColor().CGColor
+        splashView.clipsToBounds = true
+        splashView.transform = CGAffineTransformMakeScale(0.001, 0.001)
+        let parentView = options.parentView
+        parentView.addSubview(splashView)
+        parentView.bringSubviewToFront(splashView)
+        
+        UIView.animateWithDuration(0.75,
+                                   animations:
+            {
+                splashView.transform = CGAffineTransformIdentity
+            },
+                                   completion:
+            {
+                complete in
+                AnimationsManager.sharedManager.animationData = nil
+                self.performSelector(selector)
+                splashView.removeFromSuperview()
+        })
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        startView = UIView(frame:  CGRectMake(toVC.view.frame.size.width/2, toVC.view.frame.size.height/2, 0, 0))
+        containerView!.addSubview(toVC.view)
+        
+        let circleMaskPathInitial = UIBezierPath(ovalInRect: startView.frame)
+        let radius = toVC.view.bounds.height > toVC.view.bounds.width ? 2 * toVC.view.bounds.height : 2 * toVC.view.bounds.width
+        let circleMaskPathFinal = UIBezierPath(ovalInRect: CGRectInset(startView.frame, -radius, -radius))
+        
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = circleMaskPathFinal.CGPath
+        toVC.view.layer.mask = maskLayer
+        
+        let maskLayerAnimation = CABasicAnimation(keyPath: "path")
+        maskLayerAnimation.fromValue = circleMaskPathInitial.CGPath
+        maskLayerAnimation.toValue = circleMaskPathFinal.CGPath
+        maskLayerAnimation.duration = self.transitionDuration(transitionContext)
+        maskLayerAnimation.delegate = self
+        maskLayer.addAnimation(maskLayerAnimation, forKey: "path")
     }
     
         func animateAdPopup(selector: Selector) -> Void {
-            let options = AnimationsManager.sharedManager.animationData!
-            let splashView = UIView(frame: options.frame)
-            splashView.backgroundColor = options.color
-            splashView.layer.cornerRadius = splashView.frame.size.width/2
-            splashView.layer.borderWidth = 2.0
-            splashView.layer.borderColor = UIColor.whiteColor().CGColor
-            splashView.clipsToBounds = true
-            splashView.transform = CGAffineTransformMakeScale(0.001, 0.001)
-            let parentView = options.parentView
-            parentView.addSubview(splashView)
-            parentView.bringSubviewToFront(splashView)
-    
-            UIView.animateWithDuration(0.75,
-                                       animations:
-                {
-                    splashView.transform = CGAffineTransformIdentity
-                },
-                                       completion:
-                {
-                    complete in
-                    AnimationsManager.sharedManager.animationData = nil
-                    self.performSelector(selector)
-                    splashView.removeFromSuperview()
-            })
+            
         }
     
     func circleTransition(transitionContext: UIViewControllerContextTransitioning) -> Void {
