@@ -11,6 +11,8 @@ import UIKit
 class CustomNavigationAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     var reverse : Bool = false
     var options : AnimationData? = nil
+    var splashView : UIView? = nil
+    
     weak var transitionContext: UIViewControllerContextTransitioning?
     
     
@@ -19,10 +21,11 @@ class CustomNavigationAnimationController: NSObject, UIViewControllerAnimatedTra
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        self.options = AnimationsManager.sharedManager.animationData
         if transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!.isKindOfClass(ViewController) &&
             !reverse &&
-            AnimationsManager.sharedManager.animationData != nil {
-            self.options = AnimationsManager.sharedManager.animationData!
+            self.options != nil {
+            
             // Show by revealing from center of the screen
             self.circleTransitionWithFill(transitionContext)
         }
@@ -38,11 +41,76 @@ class CustomNavigationAnimationController: NSObject, UIViewControllerAnimatedTra
     func circleTransitionWithFill(transitionContext: UIViewControllerContextTransitioning) -> Void {
         self.transitionContext = transitionContext
         let containerView = transitionContext.containerView()
-        
-        var startView : UIView
         let fromVC : UIViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         let toVC : UIViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         
+        self.splashView = UIView(frame: self.options!.frame)
+        self.splashView!.backgroundColor = options!.color
+        self.splashView!.layer.cornerRadius = splashView!.frame.size.width/2
+        self.splashView!.layer.borderWidth = 2.0
+        self.splashView!.layer.borderColor = UIColor.whiteColor().CGColor
+        self.splashView!.clipsToBounds = true
+        self.splashView!.transform = CGAffineTransformMakeScale(0.001, 0.001)
+        
+        fromVC.view.addSubview(self.splashView!)
+        fromVC.view.bringSubviewToFront(self.splashView!)
+        
+        UIView.animateWithDuration(0.6,
+                                   animations:
+            {
+                self.splashView!.transform = CGAffineTransformIdentity
+            },
+                                   completion:
+            {
+                complete in
+                AnimationsManager.sharedManager.animationData = nil
+
+                let startView : UIView = UIView(frame:CGRectMake(
+                    toVC.view.frame.size.width/2,
+                    toVC.view.frame.size.height/2,
+                    0, 0))
+                containerView!.addSubview(toVC.view)
+                containerView!.sendSubviewToBack(toVC.view)
+                
+                let circleMaskPathInitial = UIBezierPath(ovalInRect: startView.frame)
+                let radius = fromVC.view.bounds.height > fromVC.view.bounds.width ?
+                    2 * fromVC.view.bounds.height :
+                    2 * fromVC.view.bounds.width
+                let circleMaskPathFinal = UIBezierPath(ovalInRect: CGRectInset(startView.frame, -radius, -radius))
+                
+                let maskLayer = CAShapeLayer()
+                maskLayer.path = circleMaskPathFinal.CGPath
+                fromVC.view.layer.mask = maskLayer
+                
+                let maskLayerAnimation = CABasicAnimation(keyPath: "path")
+                maskLayerAnimation.fromValue = circleMaskPathFinal.CGPath
+                maskLayerAnimation.toValue = circleMaskPathInitial.CGPath
+                maskLayerAnimation.duration = self.transitionDuration(transitionContext)
+                maskLayerAnimation.delegate = self
+                maskLayer.addAnimation(maskLayerAnimation, forKey: "path")
+            })
+    }
+    
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+        if flag && self.splashView != nil {
+            print(" Splash view removed ")
+            self.splashView!.removeFromSuperview()
+            self.splashView = nil
+        }
+        
+        self.transitionContext?.completeTransition(!self.transitionContext!.transitionWasCancelled())
+        let direction: CGFloat = reverse ? -1 : 1
+        if direction == 1 { // Show new VC
+            self.transitionContext?.viewControllerForKey(UITransitionContextFromViewControllerKey)?.view.layer.mask = nil
+        }
+        else { // Go back to VC
+            self.transitionContext?.viewControllerForKey(UITransitionContextToViewControllerKey)?.view.layer.mask = nil
+        }
+    }
+    
+    // SINGLE CIRCLE FILL ANIMATION
+    func animateAdPopup(selector: Selector) -> Void {
+        let options = AnimationsManager.sharedManager.animationData!
         let splashView = UIView(frame: options.frame)
         splashView.backgroundColor = options.color
         splashView.layer.cornerRadius = splashView.frame.size.width/2
@@ -66,39 +134,9 @@ class CustomNavigationAnimationController: NSObject, UIViewControllerAnimatedTra
                 self.performSelector(selector)
                 splashView.removeFromSuperview()
         })
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        startView = UIView(frame:  CGRectMake(toVC.view.frame.size.width/2, toVC.view.frame.size.height/2, 0, 0))
-        containerView!.addSubview(toVC.view)
-        
-        let circleMaskPathInitial = UIBezierPath(ovalInRect: startView.frame)
-        let radius = toVC.view.bounds.height > toVC.view.bounds.width ? 2 * toVC.view.bounds.height : 2 * toVC.view.bounds.width
-        let circleMaskPathFinal = UIBezierPath(ovalInRect: CGRectInset(startView.frame, -radius, -radius))
-        
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = circleMaskPathFinal.CGPath
-        toVC.view.layer.mask = maskLayer
-        
-        let maskLayerAnimation = CABasicAnimation(keyPath: "path")
-        maskLayerAnimation.fromValue = circleMaskPathInitial.CGPath
-        maskLayerAnimation.toValue = circleMaskPathFinal.CGPath
-        maskLayerAnimation.duration = self.transitionDuration(transitionContext)
-        maskLayerAnimation.delegate = self
-        maskLayer.addAnimation(maskLayerAnimation, forKey: "path")
     }
     
-        func animateAdPopup(selector: Selector) -> Void {
-            
-        }
+    // COMPLETE TWO-SIDED ANIMATIONS
     
     func circleTransition(transitionContext: UIViewControllerContextTransitioning) -> Void {
         self.transitionContext = transitionContext
@@ -133,11 +171,16 @@ class CustomNavigationAnimationController: NSObject, UIViewControllerAnimatedTra
             let fromVC : UIViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
             let toVC : UIViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
             
-            startView = UIView(frame: CGRectMake(fromVC.view.frame.size.width/2, fromVC.view.frame.size.height/2, 0, 0))
+            startView = UIView(frame: CGRectMake(
+                fromVC.view.frame.size.width/2,
+                fromVC.view.frame.size.height/2,
+                0, 0))
             containerView!.addSubview(toVC.view)
             containerView!.sendSubviewToBack(toVC.view)
             
-            let radius = fromVC.view.bounds.height > fromVC.view.bounds.width ? 2 * fromVC.view.bounds.height : 2 * fromVC.view.bounds.width
+            let radius = fromVC.view.bounds.height > fromVC.view.bounds.width ?
+                2 * fromVC.view.bounds.height :
+                2 * fromVC.view.bounds.width
             let circleMaskPathInitial = UIBezierPath(ovalInRect: CGRectInset(startView.frame, -radius, -radius))
             let circleMaskPathFinal = UIBezierPath(ovalInRect: startView.frame)
             
@@ -151,17 +194,6 @@ class CustomNavigationAnimationController: NSObject, UIViewControllerAnimatedTra
             maskLayerAnimation.duration = self.transitionDuration(transitionContext)
             maskLayerAnimation.delegate = self
             maskLayer.addAnimation(maskLayerAnimation, forKey: "path")
-        }
-    }
-    
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
-        self.transitionContext?.completeTransition(!self.transitionContext!.transitionWasCancelled())
-        let direction: CGFloat = reverse ? -1 : 1
-        if direction == 1 { // Show new VC
-            self.transitionContext?.viewControllerForKey(UITransitionContextFromViewControllerKey)?.view.layer.mask = nil
-        }
-        else { // Go back to VC
-            self.transitionContext?.viewControllerForKey(UITransitionContextToViewControllerKey)?.view.layer.mask = nil
         }
     }
     
