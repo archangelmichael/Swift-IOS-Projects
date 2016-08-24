@@ -13,6 +13,9 @@
 		1920AA7A1D6DB37B00567FE2 /* Proj2_BowTie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1920AA781D6DB37B00567FE2 /* Proj2_BowTie.xcdatamodeld */; };
 		1920AA7C1D6DB37B00567FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1920AA7B1D6DB37B00567FE2 /* Assets.xcassets */; };
 		1920AA7F1D6DB37B00567FE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1920AA7D1D6DB37B00567FE2 /* LaunchScreen.storyboard */; };
+		1920AA871D6DB3BF00567FE2 /* TiesData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1920AA861D6DB3BF00567FE2 /* TiesData.plist */; };
+		1920AA8E1D6DBED400567FE2 /* Bowtie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1920AA8C1D6DBED400567FE2 /* Bowtie+CoreDataProperties.swift */; };
+		1920AA8F1D6DBED400567FE2 /* Bowtie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1920AA8D1D6DBED400567FE2 /* Bowtie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		1920AA7B1D6DB37B00567FE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1920AA7E1D6DB37B00567FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1920AA801D6DB37B00567FE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1920AA861D6DB3BF00567FE2 /* TiesData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TiesData.plist; sourceTree = "<group>"; };
+		1920AA8C1D6DBED400567FE2 /* Bowtie+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bowtie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1920AA8D1D6DBED400567FE2 /* Bowtie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bowtie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		1920AA701D6DB37B00567FE2 /* Proj2-BowTie */ = {
 			isa = PBXGroup;
 			children = (
+				1920AA901D6DBEDD00567FE2 /* ManagedObjectModels */,
 				1920AA711D6DB37B00567FE2 /* AppDelegate.swift */,
 				1920AA731D6DB37B00567FE2 /* ViewController.swift */,
 				1920AA751D6DB37B00567FE2 /* Main.storyboard */,
@@ -63,8 +70,18 @@
 				1920AA7D1D6DB37B00567FE2 /* LaunchScreen.storyboard */,
 				1920AA801D6DB37B00567FE2 /* Info.plist */,
 				1920AA781D6DB37B00567FE2 /* Proj2_BowTie.xcdatamodeld */,
+				1920AA861D6DB3BF00567FE2 /* TiesData.plist */,
 			);
 			path = "Proj2-BowTie";
+			sourceTree = "<group>";
+		};
+		1920AA901D6DBEDD00567FE2 /* ManagedObjectModels */ = {
+			isa = PBXGroup;
+			children = (
+				1920AA8C1D6DBED400567FE2 /* Bowtie+CoreDataProperties.swift */,
+				1920AA8D1D6DBED400567FE2 /* Bowtie.swift */,
+			);
+			name = ManagedObjectModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +145,7 @@
 				1920AA7F1D6DB37B00567FE2 /* LaunchScreen.storyboard in Resources */,
 				1920AA7C1D6DB37B00567FE2 /* Assets.xcassets in Resources */,
 				1920AA771D6DB37B00567FE2 /* Main.storyboard in Resources */,
+				1920AA871D6DB3BF00567FE2 /* TiesData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +159,8 @@
 				1920AA741D6DB37B00567FE2 /* ViewController.swift in Sources */,
 				1920AA721D6DB37B00567FE2 /* AppDelegate.swift in Sources */,
 				1920AA7A1D6DB37B00567FE2 /* Proj2_BowTie.xcdatamodeld in Sources */,
+				1920AA8F1D6DBED400567FE2 /* Bowtie.swift in Sources */,
+				1920AA8E1D6DBED400567FE2 /* Bowtie+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
