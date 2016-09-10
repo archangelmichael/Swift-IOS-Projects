@@ -15,6 +15,12 @@
 		196047D41D83E94B002989AA /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196047D31D83E94B002989AA /* SecondTabViewController.swift */; };
 		196047D61D83EA95002989AA /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196047D51D83EA95002989AA /* MenuTableViewController.swift */; };
 		196047DB1D83EB63002989AA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196047DA1D83EB63002989AA /* SWRevealViewController.m */; };
+		196047DE1D83F974002989AA /* CustomVersion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 196047DD1D83F974002989AA /* CustomVersion.storyboard */; };
+		196047E01D84142A002989AA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196047DF1D84142A002989AA /* ContainerViewController.swift */; };
+		196047E21D841676002989AA /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196047E11D841676002989AA /* ParentViewController.swift */; };
+		196047E41D841952002989AA /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196047E31D841952002989AA /* AViewController.swift */; };
+		196047E61D84195B002989AA /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196047E51D84195B002989AA /* BViewController.swift */; };
+		196047EC1D841B22002989AA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196047EB1D841B22002989AA /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		196047D81D83EB62002989AA /* SideBarMenu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SideBarMenu-Bridging-Header.h"; sourceTree = "<group>"; };
 		196047D91D83EB63002989AA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		196047DA1D83EB63002989AA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		196047DD1D83F974002989AA /* CustomVersion.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CustomVersion.storyboard; sourceTree = "<group>"; };
+		196047DF1D84142A002989AA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		196047E11D841676002989AA /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		196047E31D841952002989AA /* AViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
+		196047E51D84195B002989AA /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
+		196047EB1D841B22002989AA /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,12 @@
 		196047DC1D83F270002989AA /* CustomVersion */ = {
 			isa = PBXGroup;
 			children = (
+				196047DD1D83F974002989AA /* CustomVersion.storyboard */,
+				196047DF1D84142A002989AA /* ContainerViewController.swift */,
+				196047E11D841676002989AA /* ParentViewController.swift */,
+				196047E31D841952002989AA /* AViewController.swift */,
+				196047E51D84195B002989AA /* BViewController.swift */,
+				196047EB1D841B22002989AA /* Menu.swift */,
 			);
 			name = CustomVersion;
 			sourceTree = "<group>";
@@ -159,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				196047DE1D83F974002989AA /* CustomVersion.storyboard in Resources */,
 				196047C31D83E6E7002989AA /* LaunchScreen.storyboard in Resources */,
 				196047C01D83E6E7002989AA /* Assets.xcassets in Resources */,
 				196047CB1D83E7B7002989AA /* LibraryVersion.storyboard in Resources */,
@@ -172,10 +191,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				196047E41D841952002989AA /* AViewController.swift in Sources */,
+				196047E61D84195B002989AA /* BViewController.swift in Sources */,
 				196047D41D83E94B002989AA /* SecondTabViewController.swift in Sources */,
 				196047D61D83EA95002989AA /* MenuTableViewController.swift in Sources */,
+				196047EC1D841B22002989AA /* Menu.swift in Sources */,
 				196047D21D83E941002989AA /* FirstTabViewController.swift in Sources */,
+				196047E21D841676002989AA /* ParentViewController.swift in Sources */,
 				196047B91D83E6E7002989AA /* AppDelegate.swift in Sources */,
+				196047E01D84142A002989AA /* ContainerViewController.swift in Sources */,
 				196047DB1D83EB63002989AA /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
