@@ -30,6 +30,9 @@ class ParentViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(screenTap))
         self.containerView.addGestureRecognizer(tap);
         
+        let drag = UIPanGestureRecognizer(target: self, action: #selector(screenDrag(_:)))
+        self.view.addGestureRecognizer(drag)
+        
         super.viewDidLoad()
     }
     
@@ -45,6 +48,37 @@ class ParentViewController: UIViewController {
                         animated: true,
                         completion: nil)
     }
+    
+    func screenDrag(drag: UIPanGestureRecognizer) {
+        let dX  = drag.translationInView(self.view).x/1.5
+        let menuLeft = self.cstrMenuLeading.constant
+        let result = menuLeft + dX
+        if drag.state == UIGestureRecognizerState.Changed {
+            if result > 0 {
+                self.cstrMenuLeading.constant = 0
+                self.menuView.layoutIfNeeded()
+            }
+            else if result < -self.menuView.frame.size.width {
+                self.cstrMenuLeading.constant = -self.menuView.frame.size.width
+                self.menuView.layoutIfNeeded()
+            }
+            else {
+                self.cstrMenuLeading.constant = result
+                self.menuView.layoutIfNeeded()
+            }
+        }
+        else if drag.state == UIGestureRecognizerState.Ended {
+            if menuLeft > -self.menuView.frame.size.width/2 {
+                self.cstrMenuLeading.constant = 0
+                self.menuView.layoutIfNeeded()
+            }
+            else {
+                self.cstrMenuLeading.constant = -self.menuView.frame.size.width
+                self.menuView.layoutIfNeeded()
+            }
+        }
+    }
+    
 
     @IBAction func onMenu(sender: AnyObject) {
         self.toggleMenu(cstrMenuLeading.constant != 0,
@@ -104,7 +138,7 @@ class ParentViewController: UIViewController {
         })
     }
     
-    // Switch child VC view
+    // Switch child VC view with autolayout constraints
     func addSubview(subView:UIView, toView parentView:UIView) {
         parentView.addSubview(subView)
         var viewBindingsDict = [String: AnyObject]()
